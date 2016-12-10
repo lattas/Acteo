@@ -76,19 +76,19 @@
 		</div>
 
         <!-- Page Title -->
-		<div class="section section-breadcrumbs">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<h1>Login</h1>
-					</div>
-				</div>
-			</div>
-		</div>
+        <div class="section section-breadcrumbs">
+    			<div class="container">
+    				<div class="row">
+    					<div class="col-md-12">
+    						<h1>Login</h1>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
 
           <div class="section">
         	<div class="container">
-    			<div class="column">
+    			<div class="row">
     				<div class="col-sm-5">
     					<div class="basic-login">
     						<form role="form" role="form">
@@ -110,15 +110,13 @@
     							</div>
     						</form>
     					</div>
-    				</div>
-
-            <div class="col-sm-5">
               <div class="basic-login">
                 <div class="not-member">
                   <p>Not a member? <a href="page-register.html">Register here</a></p>
                 </div>
               </div>
             </div>
+        </div>
 
 
     				<%--<div class="col-sm-7 social-login">
@@ -129,7 +127,6 @@
     					</div>
     					<div class="clearfix"></div>
     				</div> --%>
-    			</div>
     		</div>
     	</div>
     </body>
