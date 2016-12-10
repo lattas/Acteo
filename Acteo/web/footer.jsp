@@ -17,7 +17,7 @@
 <%-- Static HTML --%>
 
 <footer>
-  <div class="footer">
+  <div class="footer navbar-fixed-bottom">
     <div class="container">
       <div class="row">
 
