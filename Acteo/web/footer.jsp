@@ -17,7 +17,7 @@
 <%-- Static HTML --%>
 
 <footer>
-  <div class="footer navbar-fixed-bottom">
+  <div class="footer navbar-fixed-bottom" style="margin-top:50px;">
     <div class="container">
       <div class="row">
 
