@@ -2,8 +2,9 @@
 	General Style
 --------------------------------------------------------------------------*/
 body {
+}
+.oldbodybg {
   background: url(../img/page-background.png);
-  padding-bottom: 70px;
 }
 .section {
   padding: 30px 0;
@@ -1692,7 +1693,6 @@ span.color-red {
 .section-breadcrumbs {
   background: #222;
   background: rgba(34, 34, 34, 0.8);
-  margin-bottom: 10px;
 }
 .section-breadcrumbs h1 {
   color: #FAFAFA;

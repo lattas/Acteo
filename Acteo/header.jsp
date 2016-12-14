@@ -28,8 +28,8 @@
         <link rel="stylesheet" href="css/icomoon-social.css">
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600,800' rel='stylesheet' type='text/css'>
 
-        <link rel="stylesheet" href="css/leaflet.css" />
 		    <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/custom.css">
 
         <script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>

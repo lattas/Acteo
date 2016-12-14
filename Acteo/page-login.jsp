@@ -14,12 +14,13 @@
 
 <%-- JSP Directives --%>
 
-<%@ page language='java' contentType='text/html; charset=UTF-8' pageEncoding='UTF-8'%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<link href="css/custom.css" rel="stylesheet" type="text/css">
 
 <%-- HTML --%>
 
 <%@ include file="header.jsp" %>
-
+<html>
     <body>
         <!-- Navigation & Logo-->
         <div class="mainmenu-wrapper">
@@ -86,6 +87,7 @@
     			</div>
     		</div>
 
+        <div class="login-bgimg">
           <div class="section">
         	<div class="container">
     			<div class="row">
@@ -129,6 +131,5 @@
     				</div> --%>
     		</div>
     	</div>
-    </body>
-
+    </div>
 <%@ include file="footer.jsp"%>
