@@ -89,7 +89,7 @@
           <div class="section">
         	<div class="container">
     			<div class="row">
-    				<div class="col-sm-5">
+    				<div class="col-sm-5" style="float: none; margin: 0 auto;">
     					<div class="basic-login">
     						<form role="form" role="form">
     							<div class="form-group">
