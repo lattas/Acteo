@@ -1,4 +1,4 @@
-package Acteo_Java;
+package gr.acteo;
 
 import java.util.Date;
 
