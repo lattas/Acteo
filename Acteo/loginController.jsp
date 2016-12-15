@@ -48,5 +48,5 @@
 <%-- Redirection --%>
 
 <%
-  request.getRequestDispatcher("home.jsp").
+  request.getRequestDispatcher("home.jsp").forward(request, response);
 %>

@@ -4,5 +4,9 @@
     height:70%;
 }
 
+.bg-general {
+  background-image: url('../img/page-background.png');
+}
+
 footer {
 }

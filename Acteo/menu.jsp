@@ -18,7 +18,7 @@
 
       <li class="logo-wrapper"><a href="index.html"><img src="img/acteologo.png" alt="Acteo Web App Home page"></a></li>
       <li class="active">
-        <a href="index.jsp">Home</a>
+        <a href="home.jsp">Home</a>
       </li>
 
       <li class="has-submenu active">
