@@ -9,7 +9,7 @@ package gr.acteo;
  *
  */
 
-public class Corporation extends Users{
+public class Corporation extends User{
 
 	private String name;
 	private String logoLink;

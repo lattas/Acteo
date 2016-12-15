@@ -11,7 +11,7 @@ package gr.acteo;
 
 import java.util.Date;
 
-public class Individual extends Users{
+public class Individual extends User{
 
 	private String name;
 	private String surname;

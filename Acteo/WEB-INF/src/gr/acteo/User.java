@@ -9,12 +9,12 @@ package gr.acteo;
  *
  */
 
- public class Users {
+ public class User {
 
    protected String password;
    protected String email;
 
-   public Users (String password, String email) {
+   public User (String password, String email) {
      this.password = password;
      this.email = email;
    }
