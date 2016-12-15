@@ -22,7 +22,6 @@
 
 <%-- HTML --%>
 <!DOCTYPE html>
-
   <html>
     <%@ include file="header.jsp" %>
     <body>
@@ -47,7 +46,7 @@
   					    <div class="basic-login">
 
                   <!-- Login Form -->
-  						    <form role="form">
+  						    <form role="form" action='loginController.jsp' method="POST">
       							<div class="form-group">
       	        			<label for="login-username"><i class="icon-user"></i> <b>Email</b></label>
       								<input class="form-control" id="login-username" type="text" placeholder="">
