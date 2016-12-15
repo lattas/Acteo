@@ -32,9 +32,9 @@
 					<!-- Slide 1 -->
 					<li class="bg4">
 						<!-- Slide Title -->
-						<h2 class="title">to the market's needs</h2>
+						<h2 class="title">To the market's needs</h2>
 						<!-- Slide Text -->
-						<h3 class="subtitle">our team hopes to bridge the gap that exists in maritime recruiting</h3>
+						<h3 class="subtitle">Our team hopes to bridge the gap that exists in maritime recruiting</h3>
 						<!-- Slide Image -->
 						<img class="slide-img" src="img/homepage-slider/slide1.png" alt="Slide 1" />
 					</li>
@@ -44,7 +44,7 @@
 						<!-- Slide Title -->
 						<h2 class="title">Fast and dynamic</h2>
 						<!-- Slide Text -->
-						<h3 class="subtitle">fast recrutment leads to better crew and route scheduling</h3>
+						<h3 class="subtitle">Fast recrutment leads to better crew and route scheduling</h3>
 						<!-- Slide Image -->
 						<img class="slide-img" src="img/homepage-slider/slide2.png" alt="Slide 2" />
 					</li>
