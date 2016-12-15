@@ -9,7 +9,7 @@ package gr.acteo;
  *
  */
 
-public class Corporation {
+public class Corporation extends Users{
 
 	private String name;
 	private String logoLink;
@@ -52,8 +52,8 @@ public class Corporation {
 
 
 	public Corporation(String password, String email, String name, String logoLink, String description, String website) {
-		this.password = password;
-		this.email = email;
+
+		super(password, email);
 		this.name = name;
 		this.logoLink = logoLink;
 		this.description = description;

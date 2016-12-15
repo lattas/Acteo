@@ -11,8 +11,13 @@ package gr.acteo;
 
  public class Users {
 
-   private String password;
-   private String email;
+   protected String password;
+   protected String email;
+
+   public Users (String password, String email) {
+     this.password = password;
+     this.email = email;
+   }
 
    public String getPassword() {
      return password;

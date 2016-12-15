@@ -85,8 +85,7 @@ public class Individual extends Users{
 	public Individual(String password, String email, String name, String surname,
 				Date date, String gender, String specialty,
 				String cvLink, String sbLink, String photoLink) {
-		this.password = password;
-		this.email = email;
+		super(password,email);
 		this.name = name;
 		this.surname = surname;
 		this.date = date;
