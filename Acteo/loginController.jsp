@@ -39,8 +39,14 @@
   user = dao.authenticateUser(email, password);
 %>
 
+<%-- Session --%>
+
+<%
+  session.setAttribute("user",user);
+%>
+
 <%-- Redirection --%>
 
 <%
-  request.getRequestDispatcher("home.jsp");
+  request.getRequestDispatcher("home.jsp").
 %>
