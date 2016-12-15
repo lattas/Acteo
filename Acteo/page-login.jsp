@@ -43,9 +43,9 @@
     			<div class="row">
     				<div class="col-sm-5" style="float: none; margin: 0 auto;">
     					<div class="basic-login">
-    						<form role="form" role="form">
+    						<form role="form">
     							<div class="form-group">
-    	        				 	<label for="login-username"><i class="icon-user"></i> <b>Username or Email</b></label>
+    	        				 	<label for="login-username"><i class="icon-user"></i> <b>Email</b></label>
     								<input class="form-control" id="login-username" type="text" placeholder="">
     							</div>
     							<div class="form-group">
@@ -53,9 +53,9 @@
     								<input class="form-control" id="login-password" type="password" placeholder="">
     							</div>
     							<div class="form-group">
-    								<label class="checkbox">
+    								<!-- <label class="checkbox">
     									<input type="checkbox"> Remember me
-    								</label>
+    								</label> -->
     								<a href="page-password-reset.html" class="forgot-password">Forgot password?</a>
     								<button type="submit" class="btn pull-right">Login</button>
     								<div class="clearfix"></div>
