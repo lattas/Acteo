@@ -48,12 +48,12 @@
                   <!-- Login Form -->
   						    <form role="form" action='loginController.jsp' method="POST">
       							<div class="form-group">
-      	        			<label for="login-username"><i class="icon-user"></i> <b>Email</b></label>
-      								<input class="form-control" id="login-username" type="text" placeholder="">
+      	        			<label for="email"><i class="icon-user"></i> <b>Email</b></label>
+      								<input name="email" class="form-control" id="email" type="text" placeholder="">
       							</div>
       							<div class="form-group">
-      	        			<label for="login-password"><i class="icon-lock"></i> <b>Password</b></label>
-      								<input class="form-control" id="login-password" type="password" placeholder="">
+      	        			<label for="password"><i class="icon-lock"></i> <b>Password</b></label>
+      								<input name="password" class="form-control" id="password" type="password" placeholder="">
       							</div>
       							<div class="form-group">
       								<!-- <label class="checkbox">
