@@ -1,11 +1,18 @@
 package gr.acteo;
 
+/**
+ * Individual.java is part of the Acteo.gr java source code and defines the
+ * class for Individuals, extending Users.
+ *
+ *	@author Alexandros Lattas
+ *  @author Fotios Katsigiannis
+ *
+ */
+
 import java.util.Date;
 
-public class Individual {
+public class Individual extends Users{
 
-	private String password;
-	private String email;
 	private String name;
 	private String surname;
 	private Date date;
@@ -15,23 +22,6 @@ public class Individual {
 	private String sbLink;
 	private String photoLink;
 
-	//
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	//
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	//
 	public String getName() {
 		return name;
 	}
