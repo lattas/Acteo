@@ -25,14 +25,6 @@
         <!-- Navigation & Logo-->
         <div class="mainmenu-wrapper">
 	        <div class="container">
-	        	<div class="menuextras">
-					<div class="extras">
-						<ul>
-			        		<li><a href="page-login.html">Login</a></li>
-							<li><a href="page-register.html">Register</a></li>
-			        	</ul>
-					</div>
-		        </div>
 		        <nav id="mainmenu" class="mainmenu">
 					<ul>
 						<li class="logo-wrapper"><a href="index.html"><img src="img/acteologo.png" alt="Acteo Web App Home page"></a></li>
