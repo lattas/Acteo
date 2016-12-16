@@ -19,7 +19,7 @@ public class Individual extends User{
 	private String gender;
 	private String specialty;
 	private String cvLink;
-	private String sbLink;
+	private String sb;
 	private String photoLink;
 
 	public String getName() {
@@ -67,11 +67,11 @@ public class Individual extends User{
 		this.cvLink = cvLink;
 	}
 	//
-	public String getSbLink() {
-		return sbLink;
+	public String getSb() {
+		return sb;
 	}
-	public void setSbLink(String sbLink) {
-		this.sbLink = sbLink;
+	public void setSb(String sb) {
+		this.sb = sb;
 	}
 	//
 	public String getPhotoLink() {
@@ -84,7 +84,7 @@ public class Individual extends User{
 
 	public Individual(String password, String email, String name, String surname,
 				Date date, String gender, String specialty,
-				String cvLink, String sbLink, String photoLink) {
+				String cvLink, String sb, String photoLink) {
 		super(password,email);
 		this.name = name;
 		this.surname = surname;
@@ -92,7 +92,7 @@ public class Individual extends User{
 		this.gender = gender;
 		this.specialty = specialty;
 		this.cvLink = cvLink;
-		this.sbLink = sbLink;
+		this.sb = sb;
 		this.photoLink = photoLink;
 	}
 

@@ -22,7 +22,7 @@
     <html>
       <%@ include file="header.jsp" %>
       <body class="bg-general">
-        <%@ include file="menu.jsp" %>
+      <%@ include file="menu.jsp" %>
 	
 	<div class="container">
     <h1>Edit Profile</h1>
@@ -51,67 +51,66 @@
           <div class="form-group">
             <label class="col-lg-3 control-label">First name:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" value="Jane">
+			  <input name="name" class="form-control" id="name" type="text" placeholder="<%=individual.getName();%>">
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Last name:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" value="Bishop">
+			  <input name="surname" class="form-control" id="surname" type="text" placeholder="<%=individual.getSurname();%>">
             </div>
           </div>
 		  <div class="form-group">
-            <label class="col-lg-3 control-label">Age:</label>
+            <label class="col-lg-3 control-label">Date of Birth</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" value="Bishop">
+			  <input name="date" class="form-control" id="date" type="date" placeholder="<%=individual.getDate();%>">    
             </div>
           </div>
 		  <div class="form-group">
-            <label class="col-lg-3 control-label">Gender:</label>
-            <div class="col-lg-8">
-              <input class="form-control" type="text" value="Bishop">
-            </div>
-          </div>
+			<label class="col-lg-3 control-label">Gender:</label>
+			<label class="radio-inline"><input type="radio" name="gender" value="male">Male</label>
+            <label class="radio-inline"><input type="radio" name="gender" value="female">Female</label>
+		 </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Specialty:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" value="">
+              <input name="specialty" class="form-control" id="specialty" type="text" placeholder="<%=individual.getSpecialty();%>">
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Email:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" value="janesemail@gmail.com">
+              <input name="email" class="form-control" id="email" type="email" placeholder="<%=individual.getEmail();%>">
             </div>
           </div>
           <div class="form-group">
             <label class="col-md-3 control-label">Password:</label>
             <div class="col-md-8">
-              <input class="form-control" type="password" value="11111122333">
+              <input name="password" class="form-control" id="password" type="password" placeholder="<%=individual.getPassword();%>">
             </div>
           </div>
           <div class="form-group">
             <label class="col-md-3 control-label">Confirm password:</label>
             <div class="col-md-8">
-              <input class="form-control" type="password" value="11111122333">
+              <input name="passwordRe" class="form-control" id="passwordRe" type="password" placeholder="">
             </div>
           </div>
 		  <div class="form-group">
             <label class="col-md-3 control-label">Upload CV</label>
             <div class="col-md-8">
-              <input type="file" class="form-control" value="11111122333">
+			  <input type="file" name="cv" id="cv"/>
             </div>
           </div>
 		  <div class="form-group">
-            <label class="col-md-3 control-label">Upload Seaman's Leaflet</label>
+            <label class="col-md-3 control-label">Upload Seaman's Leaflet code</label>
             <div class="col-md-8">
-              <input type="file" class="form-control" value="11111122333">
+               <input name="specialty" class="form-control" id="specialty" type="text" placeholder="<%=individual.getSLlink();%>">
             </div>
           </div>
           <div class="form-group">
             <label class="col-md-3 control-label"></label>
             <div class="col-md-8">
-              <input type="button" class="btn btn-primary" value="Save Changes">
+              <input type="submit" class="btn btn-primary" value="Save Changes">
               <span></span>
               <input type="reset" class="btn btn-default" value="Cancel">
             </div>
