@@ -13,6 +13,13 @@ package gr.acteo;
 
  public class UserDAO {
 
+   User user;
+   Connection con = null;
+   ResultSet rs;
+   PreparedStatement stmt1;
+   PreparedStatement stmt2;
+   PreparedStatement stmt3;
+
    /**
    * Authenticates user based on given email and password. If no user is
    * found, it throws a relevant exception.
@@ -28,10 +35,6 @@ package gr.acteo;
                                              throws Exception{
 
      // Initialisation
-     User user;
-     Connection con = null;
-     ResultSet rs;
-     PreparedStatement stmt1;
 
      // Establishing Connection
      DB db = new DB();
@@ -78,4 +81,64 @@ package gr.acteo;
      } // end try
 
    } // end authenticateUser
+
+   public void registerUser(String email, String password, String type)
+      throws Exception {
+
+      User user;
+      Connection con = null;
+      ResultSet rs;
+      PreparedStatement stmt1;
+
+      // Establishing Connection
+      DB db = new DB();
+
+      try {
+
+        db.open(); // open connection
+
+        con = db.getConnection(); // get connection
+
+        // Quering Corporations
+        String sqlquery = "SELECT * FROM user WHERE email = ? LIMIT 1";// WHERE username = ? AND password = '1234'";
+        stmt1 = con.prepareStatement(sqlquery);
+        stmt1.setString(1, email);
+        rs = stmt1.executeQuery();
+
+        /* user found, register failed. */
+        if (rs.next()) {
+
+          String login = "<a href='page-login.jsp'>login</a>";
+          throw new Exception("This email is already registered. Please login: " + login);
+
+        /* User Not Found */
+        }
+
+        String sqlquery2 = "INSERT INTO User (email,password) VALUES (?,?)";
+        stmt2 = con.prepareStatement(sqlquery2);
+        stmt2.setString(1,email);
+        stmt2.setString(2,password);
+        stmt2.execute();
+
+        String sqlquery3 = "INSERT INTO "+ type +" (email) VALUES (?)";
+        stmt3 = con.prepareStatement(sqlquery3);
+        stmt3.setString(1,email);
+        stmt3.execute();
+
+        /* Close */
+        rs.close();
+        stmt1.close();
+        db.close();
+
+      } catch (Exception e) {
+
+        throw new Exception(e.getMessage());
+
+      } finally {
+
+        if(con != null)
+          con.close();
+
+      } // end try
+   } // end registerUSer
  }
