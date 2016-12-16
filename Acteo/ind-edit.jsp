@@ -2,7 +2,7 @@
 
 	ind-edit.jsp
 
-	This jsp application is part of the ACTEO Platform 1.0 and constitutes a 
+	This jsp application is part of the ACTEO Platform 1.0 and constitutes a
 	page where individual users can insert/ edit data to their profile
 
 	@author Alexandros Lattas
@@ -11,11 +11,27 @@
 --%>
 <%-- JSP Directives --%>
 
+<%--
+user = getattrinute(user)
+deo deo deo
+indvidual = deo.getIndal("user.getmeail")
+-->s
+
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page errorPage="error.jsp" %>
-
+<%@ page import="gr.acteo.*" %>
 <%-- Overriding Custom Css --%>
 <link href="css/custom.css" rel="stylesheet" type="text/css">
+<%@page errorPage="error.jsp"%>
+
+<%
+    Individual individual;
+    User user;
+    user = (User)session.getAttribute("user");
+    IndividualDAO dao = new IndividualDAO();
+    individual = dao.getIndividualData(user.getEmail());
+
+%>
 
 <%-- HTML --%>
   <!DOCTYPE html>
@@ -23,7 +39,7 @@
       <%@ include file="header.jsp" %>
       <body class="bg-general">
       <%@ include file="menu.jsp" %>
-	
+
 	<div class="container">
     <h1>Edit Profile</h1>
   	<hr>
@@ -33,20 +49,20 @@
         <div class="text-center">
           <img src="img/avatar.jpg" class="avatar img-circle" alt="avatar">
           <h6>Upload a different photo...</h6>
-          
+
           <input type="file" class="form-control">
         </div>
       </div>
-      
+
       <!-- edit form column -->
       <div class="col-md-9 personal-info">
         <div class="alert alert-info alert-dismissable">
-          <a class="panel-close close" data-dismiss="alert">×</a> 
+          <a class="panel-close close" data-dismiss="alert">×</a>
           <i class="fa fa-coffee"></i>
           Here you can <strong>edit</strong> your profile information
         </div>
         <h3>Personal info</h3>
-        
+
         <form class="form-horizontal" role="form" action='editController.jsp' method="GET">
           <div class="form-group">
             <label class="col-lg-3 control-label">First name:</label>
@@ -63,7 +79,7 @@
 		  <div class="form-group">
             <label class="col-lg-3 control-label">Date of Birth</label>
             <div class="col-lg-8">
-			  <input name="date" class="form-control" id="date" type="date" placeholder="<%=individual.getDate();%>">    
+			  <input name="date" class="form-control" id="date" type="date" placeholder="<%=individual.getDate();%>">
             </div>
           </div>
 		  <div class="form-group">
