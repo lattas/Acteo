@@ -43,6 +43,7 @@
 
 <%
   session.setAttribute("user",user);
+  session.setAttribute("userType",dao.getUserType(user.getEmail()));
 %>
 
 <%-- Redirection --%>
