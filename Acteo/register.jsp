@@ -46,7 +46,7 @@
   					    <div class="basic-login">
 
                   <!-- Login Form -->
-  						    <form role="form" action='registerController.jsp' method="GET">
+  						    <form role="form" action='registerController.jsp' method="Post">
       							<div class="form-group">
       	        			<label for="email"><i class="icon-user"></i> <b>Email</b></label>
       								<input name="email" class="form-control" id="email" type="text" placeholder="">
