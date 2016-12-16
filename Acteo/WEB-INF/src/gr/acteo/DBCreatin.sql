@@ -29,9 +29,9 @@ USE `ismgroup39` ;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ismgroup39`.`individual` (
   `Email` VARCHAR(255) NOT NULL,
-  `Name` VARCHAR(255) NOT NULL,
-  `Surname` VARCHAR(255) NOT NULL,
-  `Age` DATE NOT NULL,
+  `Name` VARCHAR(255) NULL,
+  `Surname` VARCHAR(255) NULL,
+  `Age` DATE NULL,
   `Gender` VARCHAR(45) NULL,
   `Specialty` VARCHAR(45) NULL,
   `CV` VARCHAR(255) NULL,
@@ -48,7 +48,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ismgroup39`.`corporation` (
   `email` VARCHAR(255) NOT NULL,
-  `name` VARCHAR(255) NOT NULL,
+  `name` VARCHAR(255) NULL,
   `logo` VARCHAR(255) NULL,
   `description` MEDIUMTEXT NULL,
   `website` MEDIUMTEXT NULL,
