@@ -19,13 +19,16 @@
 <%-- Imports --%>
 
 <%@ page import="gr.acteo.*"%>
+<%@ page import="java.util.Date"%>
+<%@ page import="java.text.SimpleDateFormat"%>
 
 <%-- Parameter Loading --%>
 
 <%
-  String name = reguest.getParameter("name");
+  String name = request.getParameter("name");
   String surname = request.getParameter("surname");
-  Date date = request.getParameter("age");
+  SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+  Date date = sdf.parse(request.getParameter("age"));
   String gender = request.getParameter("gender");
   String specialty = request.getParameter("specialty");
   String cvLink = request.getParameter("cv");
@@ -33,7 +36,7 @@
   String photoLink = request.getParameter("photo");
   String password = request.getParameter("password");
   String passwordRe = request.getParameter("passwordRe");
-  String email = reguest.getParamteter("email");
+  String email = request.getParameter("email");
 
   if(!password.equals(passwordRe)){
     String register = "<a href='register.jsp'>retry.</a>";

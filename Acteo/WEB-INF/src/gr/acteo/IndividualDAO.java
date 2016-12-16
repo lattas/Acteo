@@ -119,7 +119,7 @@ package gr.acteo;
             stmt1.setString(8, photoLink);
             stmt1.setString(8, email);
 
-            stmt1.execute();
+            stmt1.executeUpdate();
 
             stmt1.close();
             db.close();

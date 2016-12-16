@@ -59,7 +59,7 @@
         </div>
         <h3>Personal info</h3>
 
-        <form class="form-horizontal" role="form" action='editController.jsp' method="GET">
+        <form class="form-horizontal" role="form" action='individualEditController.jsp' method="GET">
           <div class="form-group">
             <label class="col-lg-3 control-label">First name:</label>
             <div class="col-lg-8">
@@ -124,7 +124,7 @@
 		  <div class="form-group">
             <label class="col-md-3 control-label">Upload Seaman's Leaflet code</label>
             <div class="col-md-8">
-               <input name="specialty" class="form-control" id="specialty" type="text" placeholder="<%=individual.getSb()%>" value="<%=individual.getSb()%>">
+               <input name="sb" class="form-control" id="sb" type="text" placeholder="<%=individual.getSb()%>" value="<%=individual.getSb()%>">
             </div>
           </div>
           <div class="form-group">
