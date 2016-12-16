@@ -11,11 +11,7 @@
 --%>
 <%-- JSP Directives --%>
 
-<%--
-user = getattrinute(user)
-deo deo deo
-indvidual = deo.getIndal("user.getmeail")
--->s
+
 
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page errorPage="error.jsp" %>
@@ -67,19 +63,19 @@ indvidual = deo.getIndal("user.getmeail")
           <div class="form-group">
             <label class="col-lg-3 control-label">First name:</label>
             <div class="col-lg-8">
-			  <input name="name" class="form-control" id="name" type="text" placeholder="<%=individual.getName();%>">
+			  <input name="name" class="form-control" id="name" type="text" placeholder="<%=individual.getName()%>" value="<%=individual.getName()%>">
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Last name:</label>
             <div class="col-lg-8">
-			  <input name="surname" class="form-control" id="surname" type="text" placeholder="<%=individual.getSurname();%>">
+			  <input name="surname" class="form-control" id="surname" type="text" placeholder="<%=individual.getSurname()%>" value="<%=individual.getSurname()%>">
             </div>
           </div>
 		  <div class="form-group">
             <label class="col-lg-3 control-label">Date of Birth</label>
             <div class="col-lg-8">
-			  <input name="date" class="form-control" id="date" type="date" placeholder="<%=individual.getDate();%>">
+			  <input name="date" class="form-control" id="date" type="date" placeholder="<%=individual.getDate()%>" value="<%=individual.getDate()%>" >
             </div>
           </div>
 		  <div class="form-group">
@@ -90,19 +86,19 @@ indvidual = deo.getIndal("user.getmeail")
           <div class="form-group">
             <label class="col-lg-3 control-label">Specialty:</label>
             <div class="col-lg-8">
-              <input name="specialty" class="form-control" id="specialty" type="text" placeholder="<%=individual.getSpecialty();%>">
+              <input name="specialty" class="form-control" id="specialty" type="text" placeholder="<%=individual.getSpecialty()%>" value="<%=individual.getSpecialty()%>">
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Email:</label>
             <div class="col-lg-8">
-              <input name="email" class="form-control" id="email" type="email" placeholder="<%=individual.getEmail();%>">
+              <input name="email" class="form-control" id="email" type="email" placeholder="<%=individual.getEmail()%>" value="<%=individual.getEmail()%>">
             </div>
           </div>
           <div class="form-group">
             <label class="col-md-3 control-label">Password:</label>
             <div class="col-md-8">
-              <input name="password" class="form-control" id="password" type="password" placeholder="<%=individual.getPassword();%>">
+              <input name="password" class="form-control" id="password" type="password" placeholder="<%=individual.getPassword()%>" value="<%=individual.getPassword()%>">
             </div>
           </div>
           <div class="form-group">
@@ -120,7 +116,7 @@ indvidual = deo.getIndal("user.getmeail")
 		  <div class="form-group">
             <label class="col-md-3 control-label">Upload Seaman's Leaflet code</label>
             <div class="col-md-8">
-               <input name="specialty" class="form-control" id="specialty" type="text" placeholder="<%=individual.getSLlink();%>">
+               <input name="specialty" class="form-control" id="specialty" type="text" placeholder="<%=individual.getSb()%>" value="<%=individual.getSb()%>">
             </div>
           </div>
           <div class="form-group">
