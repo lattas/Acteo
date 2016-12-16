@@ -45,11 +45,11 @@
 
 <%
   session.setAttribute("user",user);
-  session.setAttribute("userType",type);
+  session.setAttribute("userType",type.substring(0,3));
 %>
 
 <%-- Redirection --%>
 
 <%
-  request.getRequestDispatcher(type.substring(0,3)+"-edit.jsp").forward(request, response);
+  request.getRequestDispatcher(type+"-edit.jsp").forward(request, response);
 %>

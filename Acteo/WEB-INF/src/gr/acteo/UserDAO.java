@@ -141,4 +141,53 @@ package gr.acteo;
 
       } // end try
    } // end registerUSer
+
+   public String getUserType(String email) throws Exception{
+
+     DB db = new DB();
+     String type;
+
+     try {
+
+       db.open(); // open connection
+
+       con = db.getConnection(); // get connection
+
+       // Quering Corporations
+       String sqlquery1 = "SELECT * FROM individual WHERE email = ? LIMIT 1";
+       stmt1 = con.prepareStatement(sqlquery1);
+       stmt1.setString(1, email);
+
+       rs = stmt1.executeQuery();
+
+       /* individual */
+       if (rs.next()) {
+         type = "ind";
+
+        /* corporation */
+
+       } else {
+         type = "cor";
+       }
+
+         /* Close */
+         rs.close();
+         stmt1.close();
+         db.close();
+
+         return type;
+
+     } catch (Exception e) {
+
+       throw new Exception(e.getMessage());
+
+     } finally {
+
+       if(con != null)
+         con.close();
+
+     } // end try
+
+
+   } // end getUserType
  }
