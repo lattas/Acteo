@@ -78,11 +78,19 @@
 			  <input name="date" class="form-control" id="date" type="date" placeholder="<%=individual.getDate()%>" value="<%=individual.getDate()%>" >
             </div>
           </div>
-		  <div class="form-group">
-			<label class="col-lg-3 control-label">Gender:</label>
-			<label class="radio-inline"><input type="radio" name="gender" value="male">Male</label>
-            <label class="radio-inline"><input type="radio" name="gender" value="female">Female</label>
-		 </div>
+
+     <div class="form-group">
+       <div class="form-inline">
+       <label class="col-lg-3 control-label">Gender:</label>
+       <div class="col-lg-3">
+       <select class = "form-control" name="gender" id=gender>
+         <option  value="male" <%if(individual.getGender().equals("male")){out.println("selected='selected'");}%>>Male</option>
+         <option value="female" <%if(individual.getGender().equals("male")){out.println("selected='selected'");}%>>Female</option>
+       </select>
+     </div>
+     </diV>
+     </div>
+
           <div class="form-group">
             <label class="col-lg-3 control-label">Specialty:</label>
             <div class="col-lg-8">
@@ -92,7 +100,7 @@
           <div class="form-group">
             <label class="col-lg-3 control-label">Email:</label>
             <div class="col-lg-8">
-              <input name="email" class="form-control" id="email" type="email" placeholder="<%=individual.getEmail()%>" value="<%=individual.getEmail()%>">
+              <input name="email" class="form-control" id="email" type="email" placeholder="<%=individual.getEmail()%>" value="<%=individual.getEmail()%>" readonly>
             </div>
           </div>
           <div class="form-group">
