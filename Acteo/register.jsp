@@ -60,7 +60,7 @@
                       <input name="passwordRe" class="form-control" id="passwordRe" type="password" placeholder="">
                     </div>
                     <div class="form-group">
-                      <label class="radio-inline"><input type="radio" name="userType" value="corporate">Corporate</label>
+                      <label class="radio-inline"><input type="radio" name="userType" value="corporation">Corporation</label>
                       <label class="radio-inline"><input type="radio" name="userType" value="individual">Individual</label>
       								<button type="submit" class="btn pull-right">Register</button>
       								<div class="clearfix"></div>
