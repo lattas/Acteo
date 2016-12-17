@@ -51,5 +51,5 @@
 <%-- Redirection --%>
 
 <%
-  request.getRequestDispatcher(type+"-edit.jsp").forward(request, response);
+  request.getRequestDispatcher(type.substring(0,3)+"-edit.jsp").forward(request, response);
 %>
