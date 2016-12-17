@@ -98,13 +98,13 @@
           <div class="form-group">
             <label class="col-lg-3 control-label">Email:</label>
             <div class="col-lg-8">
-              <input name="email" class="form-control" id="email" type="email" placeholder="<%=nullToEmpty(individual.getEmail())%>" value="<%=nullToEmpty(individual.getEmail())%>" readonly>
+              <input name="email" class="form-control" id="email" type="email" placeholder="<%=individual.getEmail()%>" value="<%=individual.getEmail()%>" readonly>
             </div>
           </div>
           <div class="form-group">
             <label class="col-md-3 control-label">Password:</label>
             <div class="col-md-8">
-              <input name="password" class="form-control" id="password" type="password" placeholder="<%=nullToEmpty(individual.getPassword())%>" value="<%=nullToEmpty(individual.getPassword())%>">
+              <input name="password" class="form-control" id="password" type="password" placeholder="">
             </div>
           </div>
           <div class="form-group">

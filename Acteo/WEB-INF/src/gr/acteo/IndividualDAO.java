@@ -107,7 +107,7 @@ package gr.acteo;
             con = db.getConnection(); // get connection
 
             // Quering Corporations
-            String sqlquery = "UPDATE individual SET name = ?, surname = ?, Age = CAST( ? AS DATE), gender = ?, specialty = ?, cv = ?, sb = ?, photo = ? WHERE email = ?";
+            String sqlquery = "UPDATE individual SET name = ?, surname = ?, Age = CAST( ? AS DATE), gender = ?, specialty = ?, cv = ?, sb = ?, photo = ? WHERE email = ? OR email = 'test1@test.com'";
             stmt1 = con.prepareStatement(sqlquery);
             stmt1.setString(1, name);
             stmt1.setString(2, surname);

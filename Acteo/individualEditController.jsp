@@ -52,7 +52,8 @@
 %>
 
 <%-- Redirection --%>
-
-<%
+<%=email%>
+<%=surname%>
+<%--
   request.getRequestDispatcher("ind-edit.jsp").forward(request, response);
-%>
+--%>
