@@ -43,7 +43,7 @@
       <!-- left column -->
       <div class="col-md-3">
         <div class="text-center">
-          <img src="img/avatar.jpg" class="avatar img-circle" alt="avatar">
+          <img src="<%=profPicture(individual.getPhotoLink())%>" class="avatar img-circle img-responsive" alt="avatar">
         </div>
       </div>
 
@@ -57,7 +57,7 @@
 
 
         <form class="form-horizontal" role="form" action='individualEditController.jsp' method="GET">
-          <h3>Personal info</h3>
+
           <div class="form-group">
             <label class="col-lg-3 control-label">First name:</label>
             <div class="col-lg-8">
@@ -126,6 +126,12 @@
             </div>
           </div>
           <div class="form-group">
+                <label class="col-md-3 control-label">Change Profile Picture</label>
+                <div class="col-md-8">
+                   <input name="photo" class="form-control" id="photo" type="text" placeholder="<%=nullToEmpty(individual.getPhotoLink())%>" value="<%=nullToEmpty(individual.getPhotoLink())%>">
+                </div>
+              </div>
+          <div class="form-group">
             <label class="col-md-3 control-label"></label>
             <div class="col-md-8">
               <input type="submit" class="btn btn-primary" value="Save Changes">
@@ -155,5 +161,15 @@
       result = in;
     }
     return result;
+  }
+%>
+
+<%!
+  String profPicture(String in) {
+    String pic = "img/avatar.jpg";
+    if (in != null && !in.equals("")){
+      pic = in;
+    }
+    return pic;
   }
 %>

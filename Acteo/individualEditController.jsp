@@ -27,8 +27,6 @@
 <%
   String name = request.getParameter("name");
   String surname = request.getParameter("surname");
-  //SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-  //Date date = sdf.parse(request.getParameter("age"));
   String date = request.getParameter("date");
   String gender = request.getParameter("gender");
   String specialty = request.getParameter("specialty");
@@ -52,8 +50,7 @@
 %>
 
 <%-- Redirection --%>
-<%=email%>
-<%=surname%>
-<%--
+
+<%
   request.getRequestDispatcher("ind-edit.jsp").forward(request, response);
---%>
+%>

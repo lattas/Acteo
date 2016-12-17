@@ -107,17 +107,17 @@ package gr.acteo;
             con = db.getConnection(); // get connection
 
             // Quering Corporations
-            String sqlquery = "UPDATE individual SET name = ?, surname = ?, Age = CAST( ? AS DATE), gender = ?, specialty = ?, cv = ?, sb = ?, photo = ? WHERE email = ? OR email = 'test1@test.com'";
+            String sqlquery = "UPDATE individual SET name = ?, surname = ?, Age = CAST( ? AS DATE), gender = ?, specialty = ?, cv = ?, sb = ?, photo = ? WHERE email = ?";
             stmt1 = con.prepareStatement(sqlquery);
-            stmt1.setString(1, name);
-            stmt1.setString(2, surname);
-            stmt1.setString(3, date);
-            stmt1.setString(4, gender);
-            stmt1.setString(5, specialty);
-            stmt1.setString(6, cvLink);
-            stmt1.setString(7, sb);
-            stmt1.setString(8, photoLink);
-            stmt1.setString(9, email);
+            stmt1.setString(1, individual.getName());
+            stmt1.setString(2, individual.getSurname());
+            stmt1.setString(3, individual.getDate());
+            stmt1.setString(4, individual.getGender());
+            stmt1.setString(5, individual.getSpecialty());
+            stmt1.setString(6, individual.getCvLink());
+            stmt1.setString(7, individual.getSb());
+            stmt1.setString(8, individual.getPhotoLink());
+            stmt1.setString(9, individual.getEmail());
 
             stmt1.executeUpdate();
 
