@@ -27,8 +27,9 @@
 <%
   String name = request.getParameter("name");
   String surname = request.getParameter("surname");
-  SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-  Date date = sdf.parse(request.getParameter("age"));
+  //SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+  //Date date = sdf.parse(request.getParameter("age"));
+  Date date = null;
   String gender = request.getParameter("gender");
   String specialty = request.getParameter("specialty");
   String cvLink = request.getParameter("cv");
