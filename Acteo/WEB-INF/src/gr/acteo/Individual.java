@@ -9,13 +9,11 @@ package gr.acteo;
  *
  */
 
-import java.util.Date;
-
 public class Individual extends User{
 
 	private String name;
 	private String surname;
-	private Date date;
+	private String date;
 	private String gender;
 	private String specialty;
 	private String cvLink;
@@ -38,11 +36,11 @@ public class Individual extends User{
 		this.surname = surname;
 	}
 	//
-	public Date getDate(){
+	public String getDate(){
 		return this.date;
 	}
 
-	public void setDate(Date date){
+	public void setDate(String date){
 	   this.date = date;
 	}
 	//
@@ -83,7 +81,7 @@ public class Individual extends User{
 
 
 	public Individual(String password, String email, String name, String surname,
-				Date date, String gender, String specialty,
+				String date, String gender, String specialty,
 				String cvLink, String sb, String photoLink) {
 		super(password,email);
 		this.name = name;

@@ -14,7 +14,7 @@ package gr.acteo;
  public class IndividualDAO {
     String name;
     String surname;
-    Date date;
+    String date;
     String gender;
     String specialty;
     String cvLink;
@@ -53,7 +53,7 @@ package gr.acteo;
        con = db.getConnection(); // get connection
 
        // Quering Corporations
-       String sqlquery = "SELECT * FROM individual WHERE email = ?  LIMIT 1";
+       String sqlquery = "SELECT email, name, surname, CAST(age AS CHAR), gender, specialty, cv, sb, photo FROM individual WHERE email = ?  LIMIT 1";
        stmt1 = con.prepareStatement(sqlquery);
        stmt1.setString(1, email);
        rs = stmt1.executeQuery();
@@ -62,7 +62,7 @@ package gr.acteo;
        if (rs.next()) {
 
          ind = new Individual("",rs.getString("email"), rs.getString("name"), rs.getString("surname"),
-         						 rs.getDate("age"), rs.getString("gender"), rs.getString("specialty"),
+         						 rs.getString("age"), rs.getString("gender"), rs.getString("specialty"),
          						 rs.getString("cv"), rs.getString("sb"),rs.getString("photo"));
 
        /* User Not Found */
@@ -107,11 +107,11 @@ package gr.acteo;
             con = db.getConnection(); // get connection
 
             // Quering Corporations
-            String sqlquery = "UPDATE individual SET name = ?, surname?, age = ?, gender = ?, specialty = ?, cv = ?, sb = ?, photo = ? WHERE email = ?";
+            String sqlquery = "UPDATE individual SET name = ?, surname = ?, age = CAST( ? AS DATE), gender = ?, specialty = ?, cv = ?, sb = ?, photo = ? WHERE email = ?";
             stmt1 = con.prepareStatement(sqlquery);
             stmt1.setString(1, name);
             stmt1.setString(2, surname);
-            stmt1.setDate(3, date);
+            stmt1.setString(3, date);
             stmt1.setString(4, gender);
             stmt1.setString(5, specialty);
             stmt1.setString(6, cvLink);
