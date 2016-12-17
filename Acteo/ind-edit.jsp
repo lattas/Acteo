@@ -63,13 +63,13 @@
           <div class="form-group">
             <label class="col-lg-3 control-label">First name:</label>
             <div class="col-lg-8">
-			  <input name="name" class="form-control" id="name" type="text" placeholder="<%=individual.getName()%>" value="<%=individual.getName()%>">
+			  <input name="name" class="form-control" id="name" type="text" placeholder="<%=nullToEmpty(individual.getName())%>" value="<%=nullToEmpty(individual.getName())%>">
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Last name:</label>
             <div class="col-lg-8">
-			  <input name="surname" class="form-control" id="surname" type="text" placeholder="<%=individual.getSurname()%>" value="<%=individual.getSurname()%>">
+			  <input name="surname" class="form-control" id="surname" type="text" placeholder="<%=nullToEmpty(individual.getSurname())%>" value="<%=nullToEmpty(individual.getSurname())%>">
             </div>
           </div>
 		  <div class="form-group">
@@ -84,29 +84,29 @@
        <label class="col-lg-3 control-label">Gender:</label>
        <div class="col-lg-3">
        <select class = "form-control" name="gender" id=gender>
-         <option  value="male" <%if(individual.getGender().equals("male")){out.println("selected='selected'");}%>>Male</option>
-         <option value="female" <%if(individual.getGender().equals("male")){out.println("selected='selected'");}%>>Female</option>
+         <option  value="male" <%if(nullToEmpty(individual.getGender()).equals("male")){out.println("selected='selected'");}%>>Male</option>
+         <option value="female" <%if(nullToEmpty(individual.getGender()).equals("male")){out.println("selected='selected'");}%>>Female</option>
        </select>
      </div>
      </diV>
-     </div>
+   </div>
 
           <div class="form-group">
             <label class="col-lg-3 control-label">Specialty:</label>
             <div class="col-lg-8">
-              <input name="specialty" class="form-control" id="specialty" type="text" placeholder="<%=individual.getSpecialty()%>" value="<%=individual.getSpecialty()%>">
+              <input name="specialty" class="form-control" id="specialty" type="text" placeholder="<%=nullToEmpty(individual.getSpecialty())%>" value="<%=nullToEmpty(individual.getSpecialty())%>">
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Email:</label>
             <div class="col-lg-8">
-              <input name="email" class="form-control" id="email" type="email" placeholder="<%=individual.getEmail()%>" value="<%=individual.getEmail()%>" readonly>
+              <input name="email" class="form-control" id="email" type="email" placeholder="<%=nullToEmpty(individual.getEmail())%>" value="<%=nullToEmpty(individual.getEmail())%>" readonly>
             </div>
           </div>
           <div class="form-group">
             <label class="col-md-3 control-label">Password:</label>
             <div class="col-md-8">
-              <input name="password" class="form-control" id="password" type="password" placeholder="<%=individual.getPassword()%>" value="<%=individual.getPassword()%>">
+              <input name="password" class="form-control" id="password" type="password" placeholder="<%=nullToEmpty(individual.getPassword())%>" value="<%=nullToEmpty(individual.getPassword())%>">
             </div>
           </div>
           <div class="form-group">
@@ -124,7 +124,7 @@
 		  <div class="form-group">
             <label class="col-md-3 control-label">Upload Seaman's Leaflet code</label>
             <div class="col-md-8">
-               <input name="sb" class="form-control" id="sb" type="text" placeholder="<%=individual.getSb()%>" value="<%=individual.getSb()%>">
+               <input name="sb" class="form-control" id="sb" type="text" placeholder="<%=nullToEmpty(individual.getSb())%>" value="<%=nullToEmpty(individual.getSb())%>">
             </div>
           </div>
           <div class="form-group">
@@ -141,3 +141,21 @@
 </div>
 <hr>
 <%@ include file="footer.jsp"%>
+
+<%!
+  /** Instead of printing "null" when the field is empty, we make it an empty
+  * string.
+  *
+  * @param in the String to be examined.
+  *
+  * @return the string of not null or empty string if null.
+  */
+  String nullToEmpty(String in) {
+
+    String result = "";
+    if (in != null) {
+      result = in;
+    }
+    return result;
+  }
+%>
