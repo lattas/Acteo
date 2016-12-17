@@ -44,9 +44,6 @@
       <div class="col-md-3">
         <div class="text-center">
           <img src="img/avatar.jpg" class="avatar img-circle" alt="avatar">
-          <h6>Upload a different photo...</h6>
-
-          <input type="file" class="form-control">
         </div>
       </div>
 
@@ -57,9 +54,10 @@
           <i class="fa fa-coffee"></i>
           Here you can <strong>edit</strong> your profile information
         </div>
-        <h3>Personal info</h3>
+
 
         <form class="form-horizontal" role="form" action='individualEditController.jsp' method="GET">
+          <h3>Personal info</h3>
           <div class="form-group">
             <label class="col-lg-3 control-label">First name:</label>
             <div class="col-lg-8">
@@ -115,12 +113,12 @@
               <input name="passwordRe" class="form-control" id="passwordRe" type="password" placeholder="">
             </div>
           </div>
-		  <div class="form-group">
-            <label class="col-md-3 control-label">Upload CV</label>
-            <div class="col-md-8">
-			  <input type="file" name="cv" id="cv"/>
+        <div class="form-group">
+              <label class="col-md-3 control-label">Upload CV</label>
+              <div class="col-md-8">
+                 <input name="cv" class="form-control" id="cv" type="text" placeholder="<%=nullToEmpty(individual.getCvLink())%>" value="<%=nullToEmpty(individual.getCvLink())%>">
+              </div>
             </div>
-          </div>
 		  <div class="form-group">
             <label class="col-md-3 control-label">Upload Seaman's Leaflet code</label>
             <div class="col-md-8">

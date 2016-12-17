@@ -53,7 +53,7 @@ package gr.acteo;
        con = db.getConnection(); // get connection
 
        // Quering Corporations
-       String sqlquery = "SELECT email, name, surname, CAST(age AS CHAR), gender, specialty, cv, sb, photo FROM individual WHERE email = ?  LIMIT 1";
+       String sqlquery = "SELECT email, name, surname, CAST(age AS CHAR) as Age, gender, specialty, cv, sb, photo FROM individual WHERE email = ?  LIMIT 1";
        stmt1 = con.prepareStatement(sqlquery);
        stmt1.setString(1, email);
        rs = stmt1.executeQuery();
@@ -62,7 +62,7 @@ package gr.acteo;
        if (rs.next()) {
 
          ind = new Individual("",rs.getString("email"), rs.getString("name"), rs.getString("surname"),
-         						 rs.getString("age"), rs.getString("gender"), rs.getString("specialty"),
+         						 rs.getString("Age"), rs.getString("gender"), rs.getString("specialty"),
          						 rs.getString("cv"), rs.getString("sb"),rs.getString("photo"));
 
        /* User Not Found */
@@ -107,7 +107,7 @@ package gr.acteo;
             con = db.getConnection(); // get connection
 
             // Quering Corporations
-            String sqlquery = "UPDATE individual SET name = ?, surname = ?, age = CAST( ? AS DATE), gender = ?, specialty = ?, cv = ?, sb = ?, photo = ? WHERE email = ?";
+            String sqlquery = "UPDATE individual SET name = ?, surname = ?, Age = CAST( ? AS DATE), gender = ?, specialty = ?, cv = ?, sb = ?, photo = ? WHERE email = ?";
             stmt1 = con.prepareStatement(sqlquery);
             stmt1.setString(1, name);
             stmt1.setString(2, surname);
@@ -117,7 +117,7 @@ package gr.acteo;
             stmt1.setString(6, cvLink);
             stmt1.setString(7, sb);
             stmt1.setString(8, photoLink);
-            stmt1.setString(8, email);
+            stmt1.setString(9, email);
 
             stmt1.executeUpdate();
 
