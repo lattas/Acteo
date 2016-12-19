@@ -1,4 +1,4 @@
-• page-login.jsp: email type -> email
+﻿• page-login.jsp: email type -> email
 • logout.jsp: create, redirect to home
 • menu.jsp: add logout button
 • menu.jsp: edit profile generic (Alex)
@@ -6,3 +6,4 @@
 • *.edit.jsp: view profile button
 • cor-edit: add big text bubble for description
 • myprofile.jsp (Alex)
+• Insert date plugin for registration (.js)
