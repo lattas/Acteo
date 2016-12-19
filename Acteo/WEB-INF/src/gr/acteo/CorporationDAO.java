@@ -1,8 +1,8 @@
 package gr.acteo;
 
 /**
- * IndividualDAO.java is part of the Acteo.gr java source code
- * that, using DB.java, handles the queries for editing the user profile.
+ * CorporationDAO.java is part of the Acteo.gr java source code
+ * that, using DB.java, handles the queries for editing the company profile.
  *
  *	@author Alexandros Lattas
  *  @author Fotios Katsigiannis
@@ -11,20 +11,17 @@ package gr.acteo;
 
  import java.sql.*;
 
- public class IndividualDAO {
-    String name;
-    String surname;
-    String date;
-    String gender;
-    String specialty;
-    String cvLink;
-    String sb;
-    String photoLink;
+ public class CorporationDAO {
     String email;
+    String name;
+    String logoLink;
+    String description;
+    String website;
+
 
 
    /**
-   * Retrieves user object based on given email. If no user is
+   * Retrieves corporation object based on given email. If no company profile is
    * found, it throws a relevant exception.
    *
    * @param email given user's username
@@ -34,11 +31,11 @@ package gr.acteo;
    *
    * @throws Exception when no user is found in the database for these credentials.
    */
-   public Individual getIndividualData(String email) throws Exception{
+   public Corporation getCorporationData(String email) throws Exception{
 
 
      // Initialisation
-     Individual ind;
+     Corporation cor;
      Connection con = null;
      ResultSet rs;
      PreparedStatement stmt1;
@@ -53,19 +50,18 @@ package gr.acteo;
        con = db.getConnection(); // get connection
 
        // Quering Corporations
-       String sqlquery = "SELECT email, name, surname, CAST(age AS CHAR) as Age, gender, specialty, cv, sb, photo FROM individual WHERE email = ?  LIMIT 1";
+       String sqlquery = "SELECT email, name, logo, description, website FROM corporation WHERE email = ?  LIMIT 1";
        stmt1 = con.prepareStatement(sqlquery);
        stmt1.setString(1, email);
        rs = stmt1.executeQuery();
 
-       /* user found */
+       /* Company Found */
        if (rs.next()) {
 
-         ind = new Individual("",rs.getString("email"), rs.getString("name"), rs.getString("surname"),
-         						 rs.getString("Age"), rs.getString("gender"), rs.getString("specialty"),
-         						 rs.getString("cv"), rs.getString("sb"),rs.getString("photo"));
+         cor = new Corporation("",rs.getString("email"), rs.getString("name"), rs.getString("logo"),
+         						  rs.getString("description"), rs.getString("website"));
 
-       /* User Not Found */
+       /* Company not found */
        } else {
          throw new Exception("Wrong Username or Password");
        }
@@ -75,7 +71,7 @@ package gr.acteo;
          stmt1.close();
          db.close();
 
-         return ind;
+         return cor;
 
      } catch (Exception e) {
 
@@ -89,9 +85,11 @@ package gr.acteo;
      } // end try
 
    } // end method
-   public void updateIndividualData(Individual individual) throws Exception{
+
+   public void updateCorporationData(Corporation corporation) throws Exception{
 
           // Initialisation
+          Corporation cor;
           Connection con = null;
           ResultSet rs;
           PreparedStatement stmt1;
@@ -106,17 +104,13 @@ package gr.acteo;
             con = db.getConnection(); // get connection
 
             // Quering Corporations
-            String sqlquery = "UPDATE individual SET name = ?, surname = ?, Age = CAST( ? AS DATE), gender = ?, specialty = ?, cv = ?, sb = ?, photo = ? WHERE email = ?";
+            String sqlquery = "UPDATE corporation SET name = ?, logo = ?, description = ?, website = ? WHERE email = ?";
             stmt1 = con.prepareStatement(sqlquery);
-            stmt1.setString(1, individual.getName());
-            stmt1.setString(2, individual.getSurname());
-            stmt1.setString(3, individual.getDate());
-            stmt1.setString(4, individual.getGender());
-            stmt1.setString(5, individual.getSpecialty());
-            stmt1.setString(6, individual.getCvLink());
-            stmt1.setString(7, individual.getSb());
-            stmt1.setString(8, individual.getPhotoLink());
-            stmt1.setString(9, individual.getEmail());
+            stmt1.setString(1, corporation.getName());
+            stmt1.setString(2, corporation.getLogoLink());
+            stmt1.setString(3, corporation.getDescription());
+            stmt1.setString(4, corporation.getWebsite());
+            stmt1.setString(5, corporation.getEmail());
 
             stmt1.executeUpdate();
 
