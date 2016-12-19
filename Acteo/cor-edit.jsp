@@ -54,11 +54,10 @@
                 </div>
                 <h3>Company info</h3>
 
-                <form class="form-horizontal" role="form">
+               <form class="form-horizontal" role="form" action='corporationEditController.jsp' method="GET">
                   <div class="form-group">
                     <label class="col-lg-3 control-label">Title</label>
                     <div class="col-lg-8">
-                      <input class="form-control" type="text" value="Jane">
                       <input name="name" class="form-control" id="name" type="text" placeholder="<%=nullToEmpty(corporation.getName())%>" value="<%=nullToEmpty(corporation.getName())%>">
                     </div>
                   </div>
