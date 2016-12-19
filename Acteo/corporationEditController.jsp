@@ -30,6 +30,7 @@
   String description = request.getParameter("description");
   String logoLink = request.getParameter("logo");
   String password = request.getParameter("password");
+  String website = request.getParameter("website");
   String passwordRe = request.getParameter("passwordRe");
   String email = request.getParameter("email");
 

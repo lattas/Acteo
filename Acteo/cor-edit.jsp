@@ -44,17 +44,17 @@
               <!-- edit form column -->
               <div class="col-md-9 personal-info">
                 <div class="alert alert-info alert-dismissable">
-                  <a class="panel-close close" data-dismiss="alert">×</a> 
+                  <a class="panel-close close" data-dismiss="alert">×</a>
                   <i class="fa fa-coffee"></i>
                   Here you can <strong>edit</strong> your company's information<br>
                   <i>
-                      Note: For your own safety we do not store your data files. 
+                      Note: For your own safety we do not store your data files.
                       Please upload them to your drive and insert the link indicating the file.
                   </i>
                 </div>
                 <h3>Company info</h3>
 
-               <form class="form-horizontal" role="form" action='corporationEditController.jsp' method="GET">
+               <form class="form-horizontal" role="form" action='corporationEditController.jsp' method="POST">
                   <div class="form-group">
                     <label class="col-lg-3 control-label">Title</label>
                     <div class="col-lg-8">
@@ -88,16 +88,16 @@
                           <div class="form-group">
                     <label class="col-md-3 control-label">Upload Logo</label>
                     <div class="col-md-8">
-                      <input name="photo" class="form-control" id="photo" type="text" placeholder="<%=nullToEmpty(corporation.getLogoLink())%>" value="<%=nullToEmpty(corporation.getLogoLink())%>">
+                      <input name="logo" class="form-control" id="photo" type="text" placeholder="<%=nullToEmpty(corporation.getLogoLink())%>" value="<%=nullToEmpty(corporation.getLogoLink())%>">
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="col-md-3 control-label"></label>
                     <div class="col-md-8">
-                      <input type="button" class="btn btn-primary" value="Save Changes">
+                      <input type="submit" class="btn btn-primary" value="Save Changes">
                       <span></span>
-                      <input type="reset" class="btn btn-default" value="Cancel">
+                      <input type="reset" class="btn btn-default" value="Reset">
                     </div>
                   </div>
                 </form>
@@ -105,7 +105,7 @@
           </div>
         </div>
         <hr>
-      
+
       <%@ include file="footer.jsp"%>
 
 <%!
