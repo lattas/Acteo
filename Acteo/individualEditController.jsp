@@ -1,12 +1,13 @@
 <%--
 
-	loginController.jsp
+	individualEditController.jsp
 
-	This jsp application is part of the ACTEO Platform 1.0 and the login
-  process.
+	This jsp application is part of the ACTEO Platform 1.0 and constitutes a
+        part of the individual use cases by handling the queries towards the 
+        DB.
 
 	@author Alexandros Lattas
-  @author Fotis Katsgiannis
+        @author Fotis Katsgiannis
 
 --%>
 

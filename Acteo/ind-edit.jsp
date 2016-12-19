@@ -52,7 +52,8 @@
         <div class="alert alert-info alert-dismissable">
           <a class="panel-close close" data-dismiss="alert">×</a>
           <i class="fa fa-coffee"></i>
-          Here you can <strong>edit</strong> your profile information
+          Here you can <strong>edit</strong> your profile information. <br>
+          <i>Note: For your own safety we do not store your data files. Please upload them to your drive and insert the link indicating the file.</i>
         </div>
 
 
