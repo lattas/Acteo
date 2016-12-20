@@ -75,7 +75,15 @@
                   </div><!-- /mainmenu-submenu -->
                 </li>
 
-          <%
+      <%
+        } else {
+      %>
+
+          <li class=" active">
+            <a href="page-login.jsp">Login</a>
+          </li>
+
+      <%
         }
       %>
       </ul>
