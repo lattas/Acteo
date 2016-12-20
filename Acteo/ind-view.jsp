@@ -33,19 +33,17 @@
     <%@ include file="menu.jsp" %>
 
     	<div class="container">
-        <h1>Individual Profile</h1>
         <div class="row">
 
           <div class="section">
-            <div class="container">
               <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-8" style="float: none; margin: 0 auto;">
 
                   <div class="panel panel-default">
                     <div class="panel-body">
                       <div class="row">
                         <div class="col-xs-12 col-sm-4 text-center">
-                                        <img src="img/avatar.jpg" alt="" class="center-block img-circle img-responsive">
+                                        <img src="<%=profPicture(individual.getPhotoLink())%>" alt="" class="center-block img-circle img-responsive">
                                         <ul class="list-inline ratings text-center" title="Ratings">
                                           <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
                                           <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
@@ -58,31 +56,32 @@
 
                                 <div class="col-xs-12 col-sm-8">
                                     <h2><%=nullToEmpty(individual.getName()) + " " + nullToEmpty(individual.getSurname())%></h2>
-                                    <p><strong>Date Of Birth: </strong> 12 </p>
-                                    <p><strong>Gender: </strong> Shemale </p>
-                                    <p><strong>Specialty:</strong> Mechanic A'</p>
+                                    <p><strong>Date Of Birth: </strong><%=individual.getDate()%></p>
+                                    <p><strong>Gender: </strong><%=individual.getGender()%></p>
+                                    <p><strong>Specialty:</strong><%=individual.getSpecialty()%></p>
                                 </div><!--/col-->
 
+                                <div class="portfolio-item-description col-sm-8">
+                                  <ul class="no-list-style">
+                                    <li class="portfolio-visit-btn"><a href="<%=nullToEmptyLink(individual.getCvLink())%>" class="btn">View CV</a>
+                                        <a href="<%=nullToEmptyLink(individual.getSb())%>" class="btn">View SL</a>
+                                        <a href="<%="mailto:" + individual.getEmail() + "?Subject=Hello " + individual.getName()%>" class="btn">Send Message</a>
+                                    </li>
+                                  </ul>
+                                </div>
 
-
-                                <div class="col-xs-12 col-sm-4">
+                                <div class="col-xs-12 col-sm-8">
                                     <h2><strong>Explore</strong></h2>
-                                    <p><small>Browse companies</small></p>
-                                    <a href="browse_companies_by_candidate.html" class="btn btn"><i class="icon-shopping-cart icon-white"></i> Browse</a>
+                                    <p><small>Browse Other Individuals</small></p>
+                                    <a href="#" class="btn btn"><i class="icon-shopping-cart icon-white"></i> Browse</a>
                                 </div><!--/col-->
-                                <div class="col-xs-12 col-sm-4">
-                                    <h2><strong>Update Info</strong></h2>
-                                    <p><small>be always up date</small></p>
-                                    <a href="edit_profile_by_candidate.html" class="btn btn"><i class="icon-shopping-cart icon-white"></i> Edit Profile</a>
-                      </div><!--/col-->
-                    </div><!--/row-->
+                            </div><!--/row-->
                   </div><!--/panel-body-->
                 </div><!--/panel-->
 
 
 
               </div>
-            </div>
             </div>
 
         </div> <%-- row --%>
@@ -108,6 +107,25 @@
     return result;
   }
 %>
+
+<%!
+  /** Instead of printing "null" when the field is empty, we make it an empty
+  * link.
+  *
+  * @param in the String to be examined.
+  *
+  * @return the string of not null or empty string if null.
+  */
+  String nullToEmptyLink(String in) {
+
+    String result = "#";
+    if (in != null) {
+      result = in;
+    }
+    return result;
+  }
+%>
+
 
 <%!
   /** Instead of showing nothing when the field is empty, a default

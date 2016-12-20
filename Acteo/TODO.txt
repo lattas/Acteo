@@ -1,5 +1,5 @@
 ﻿• cor-edit: add big text bubble for description
-• *.view.jsp (Alex)
+• cor.view.jsp (Alex)
 • Insert date plugin for registration (.js)
 
 (done) menu.jsp: edit profile generic
@@ -8,3 +8,4 @@
 (done) logout.jsp: create, redirect to home
 (done) menu.jsp: add logout button
 (done) page-login.jsp: email type -> email
+(done) ind.view.jsp
