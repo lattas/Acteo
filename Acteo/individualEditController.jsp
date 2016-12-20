@@ -3,7 +3,7 @@
 	individualEditController.jsp
 
 	This jsp application is part of the ACTEO Platform 1.0 and constitutes a
-        part of the individual use cases by handling the queries towards the 
+        part of the individual use cases by handling the queries towards the
         DB.
 
 	@author Alexandros Lattas
@@ -37,17 +37,38 @@
   String password = request.getParameter("password");
   String passwordRe = request.getParameter("passwordRe");
   String email = request.getParameter("email");
+%>
 
+<%-- Passwords check --%>
+
+<%
   if(!password.equals(passwordRe)){
-    String register = "<a href='register.jsp'>retry.</a>";
+    String register = "<a href='ind-edit.jsp'>retry.</a>";
     throw new Exception("Passwords do not match. Please " + register);
   }
+%>
 
+<%-- update --%>
+
+<%
   Individual individual = new Individual(password,email,name,surname,
     date,gender,specialty,cvLink,sb,photoLink);
 
-  IndividualDAO dao = new IndividualDAO();
-  dao.updateIndividualData(individual);
+  IndividualDAO indDAO = new IndividualDAO();
+  indDAO.updateIndividualData(individual);
+%>
+
+<%-- update password --%>
+
+<%
+  if (password != null && password != "") {
+
+    UserDAO userDAO = new UserDAO();
+    userDAO.updatePassword(email, password);
+
+    User userNew = new User(email, password);
+    session.setAttribute("user",email);
+  }
 %>
 
 <%-- Redirection --%>

@@ -20,10 +20,9 @@
 
 <%
     Individual individual;
-    User user;
-    user = (User)session.getAttribute("user");
+    String email = (String)session.getAttribute("user");
     IndividualDAO dao = new IndividualDAO();
-    individual = dao.getIndividualData(user.getEmail());
+    individual = dao.getIndividualData(email);
 
 %>
 

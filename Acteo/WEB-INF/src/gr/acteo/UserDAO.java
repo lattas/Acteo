@@ -190,4 +190,40 @@ package gr.acteo;
 
 
    } // end getUserType
+
+   public void updatePassword(String email, String password) throws Exception {
+
+     Connection con = null;
+     PreparedStatement stmt1;
+
+     // Establishing Connection
+     DB db = new DB();
+
+     try {
+
+       db.open(); // open connection
+
+       con = db.getConnection(); // get connection
+
+       String sqlquery = "UPDATE user SET password = ? WHERE email = ?";
+       stmt1 = con.prepareStatement(sqlquery);
+       stmt1.setString(1,password);
+       stmt1.setString(2,email);
+       stmt1.executeUpdate();
+
+       /* Close */
+       stmt1.close();
+       db.close();
+
+     } catch (Exception e) {
+
+       throw new Exception("There was an error while chaning the password:" + e.getMessage());
+
+     } finally {
+
+       if(con != null)
+         con.close();
+
+     } // end try
+   }
  }

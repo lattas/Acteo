@@ -42,8 +42,8 @@
 <%-- Session --%>
 
 <%
-  session.setAttribute("user",user);
-  session.setAttribute("userType",dao.getUserType(user.getEmail()));
+  session.setAttribute("user",email);
+  session.setAttribute("userType",dao.getUserType(email));
 %>
 
 <%-- Redirection --%>
