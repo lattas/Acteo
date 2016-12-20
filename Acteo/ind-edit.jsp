@@ -23,7 +23,6 @@
     String email = (String)session.getAttribute("user");
     IndividualDAO dao = new IndividualDAO();
     individual = dao.getIndividualData(email);
-
 %>
 
 <%-- HTML --%>
@@ -152,15 +151,5 @@
       result = in;
     }
     return result;
-  }
-%>
-
-<%!
-  String profPicture(String in) {
-    String pic = "img/avatar.jpg";
-    if (in != null && !in.equals("")){
-      pic = in;
-    }
-    return pic;
   }
 %>
