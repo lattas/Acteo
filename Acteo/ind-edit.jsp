@@ -47,7 +47,7 @@
           <i>Note: For your own safety we do not store your data files. Please upload them to your drive and insert the link indicating the file.</i>
         </div>
 
-        <form class="form-horizontal" role="form" action='individualEditController.jsp' method="GET">
+        <form class="form-horizontal" role="form" action='individualEditController.jsp' method="POST">
 
           <div class="form-group">
             <label class="col-lg-3 control-label">First name:</label>

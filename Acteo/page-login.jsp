@@ -49,7 +49,7 @@
   						    <form role="form" action='loginController.jsp' method="POST">
       							<div class="form-group">
       	        			<label for="email"><i class="icon-user"></i> <b>Email</b></label>
-      								<input name="email" class="form-control" id="email" type="text" placeholder="">
+      								<input name="email" class="form-control" id="email" type="email" placeholder="">
       							</div>
       							<div class="form-group">
       	        			<label for="password"><i class="icon-lock"></i> <b>Password</b></label>
