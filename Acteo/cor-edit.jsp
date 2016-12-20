@@ -22,10 +22,9 @@
 
 <%
     Corporation corporation;
-    User user;
-    user = (User)session.getAttribute("user");
+    String email = (String)session.getAttribute("user");
     CorporationDAO dao = new CorporationDAO();
-    corporation = dao.getCorporationData(user.getEmail());
+    corporation = dao.getCorporationData(email);
 
 %>
 

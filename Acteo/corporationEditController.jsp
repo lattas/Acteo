@@ -3,7 +3,7 @@
 	corporationEditController.jsp
 
 	This jsp application is part of the ACTEO Platform 1.0 and constitutes a
-        part of the corporational use cases by handling the queries towards the 
+        part of the corporational use cases by handling the queries towards the
         DB.
 
 	@author Alexandros Lattas
@@ -38,12 +38,27 @@
     String register = "<a href='register.jsp'>retry.</a>";
     throw new Exception("Passwords do not match. Please " + register);
   }
+%>
 
+<%-- Update Data --%>
+
+<%
   Corporation corporation = new Corporation(password,email,name,logoLink,
     description,website);
 
   CorporationDAO dao = new CorporationDAO();
   dao.updateCorporationData(corporation);
+%>
+
+<%
+  if (password != null && password != "") {
+
+    UserDAO userDAO = new UserDAO();
+    userDAO.updatePassword(email, password);
+
+    User userNew = new User(email, password);
+    session.setAttribute("user",email);
+  }
 %>
 
 <%-- Redirection --%>
