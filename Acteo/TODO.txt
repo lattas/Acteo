@@ -1,9 +1,10 @@
 ﻿• page-login.jsp: email type -> email
 • logout.jsp: create, redirect to home
 • menu.jsp: add logout button
-• menu.jsp: edit profile generic (Alex)
 • *.edit.jsp: change password + method in UserDAO (Alex)
 • *.edit.jsp: view profile button
 • cor-edit: add big text bubble for description
 • myprofile.jsp (Alex)
 • Insert date plugin for registration (.js)
+
+(done) menu.jsp: edit profile generic (Alex)
