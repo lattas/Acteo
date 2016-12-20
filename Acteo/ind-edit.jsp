@@ -37,12 +37,6 @@
     <h1>Edit Profile</h1>
   	<hr>
 	<div class="row">
-      <!-- left column -->
-      <div class="col-md-3">
-        <div class="text-center">
-          <img src="<%=profPicture(individual.getPhotoLink())%>" class="avatar img-circle img-responsive" alt="avatar">
-        </div>
-      </div>
 
       <!-- edit form column -->
       <div class="col-md-9 personal-info">
@@ -52,7 +46,6 @@
           Here you can <strong>edit</strong> your profile information. <br>
           <i>Note: For your own safety we do not store your data files. Please upload them to your drive and insert the link indicating the file.</i>
         </div>
-
 
         <form class="form-horizontal" role="form" action='individualEditController.jsp' method="GET">
 

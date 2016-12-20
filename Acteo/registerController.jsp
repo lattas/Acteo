@@ -44,7 +44,7 @@
 %>
 
 <%
-  session.setAttribute("user",user);
+  session.setAttribute("user",email);
   session.setAttribute("userType",type.substring(0,3));
 %>
 
