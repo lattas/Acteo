@@ -74,7 +74,7 @@
 		  <div class="form-group">
             <label class="col-lg-3 control-label">Date of Birth</label>
             <div class="col-lg-8">
-			  <input name="date" class="form-control" id="date" type="date" placeholder="<%=individual.getDate()%>" value="<%=individual.getDate()%>" >
+			  <input name="date" class="form-control" id="date" type="date" placeholder="<%=individual.getDate()%>">
             </div>
           </div>
 
