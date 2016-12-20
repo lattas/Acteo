@@ -10,6 +10,12 @@
 
 --%>
 
+<%-- Directives and Imports --%>
+
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page errorPage="error.jsp" %>
+<%@ page import="gr.acteo.*" %> <%--needed?--%>
+
 <!-- Navigation & Logo-->
 <div class="mainmenu-wrapper">
   <div class="container">
@@ -29,7 +35,6 @@
           <div class="mainmenu-submenu-inner">
             <h4>Actions</h4>
             <ul>
-              <li><a href="view_candidate_by_candidate.jsp">View Profile</a></li>
               <li><a href="browse_companies_by_candidate.jsp">Browse Companies</a></li>
             </ul>
           </div><!-- /mainmenu-submenu-inner -->
@@ -42,13 +47,37 @@
           <div class="mainmenu-submenu-inner">
             <h4>Actions</h4>
             <ul>
-              <li><a href="view_company_by_company.jsp">View Profile</a></li>
               <li><a href="browse_candidates_by_company.jsp">Browse Individuals</a></li>
             </ul>
 
           </div><!-- /mainmenu-submenu-inner -->
         </div><!-- /mainmenu-submenu -->
       </li>
+
+      <%
+        if (session.getAttribute("user") != null) {
+          String editLink = session.getAttribute("userType") + "-edit.jsp";
+          String viewLink = session.getAttribute("userType") + "-view.jsp"; %>
+
+
+                <li class="has-submenu active">
+                  <a href="#">My Profile</a>
+                  <div class="mainmenu-submenu">
+                    <div class="mainmenu-submenu-inner">
+                      <h4>Actions</h4>
+                      <ul>
+                        <li><a href="<%=viewLink%>">View Profile</a></li>
+                        <li><a href="<%=editLink%>">Edit Profile</a></li>
+                        <li><a href="logout.jsp"%>Log out</a></li>
+                      </ul>
+
+                    </div><!-- /mainmenu-submenu-inner -->
+                  </div><!-- /mainmenu-submenu -->
+                </li>
+
+          <%
+        }
+      %>
       </ul>
     </nav>
   </div>
