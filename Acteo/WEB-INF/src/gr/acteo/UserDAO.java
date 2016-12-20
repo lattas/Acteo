@@ -59,7 +59,8 @@ package gr.acteo;
 
        /* User Not Found */
        } else {
-         throw new Exception("Wrong Username or Password");
+         String link = "<a href='page-login.jsp'>retry.</a>";
+         throw new Exception("Wrong Username or Password. Plase " +link);
        }
 
          /* Close */
