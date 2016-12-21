@@ -67,6 +67,12 @@
                     </div>
                   </div>
                   <div class="form-group">
+                    <label class="col-lg-3 control-label">Website</label>
+                    <div class="col-lg-8">
+                      <input name="website" class="form-control" id="description" type="text" placeholder="<%=nullToEmpty(corporation.getWebsite())%>" value="<%=nullToEmpty(corporation.getWebsite())%>">
+                    </div>
+                  </div>
+                  <div class="form-group">
                     <label class="col-lg-3 control-label">Email:</label>
                     <div class="col-lg-8">
                       <input name="email" class="form-control" id="email" type="email" placeholder="<%=corporation.getEmail()%>" value="<%=corporation.getEmail()%>" readonly>
