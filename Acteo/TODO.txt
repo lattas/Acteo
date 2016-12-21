@@ -1,11 +1,10 @@
-﻿• cor-edit: add big text bubble for description
-• Insert date plugin for registration (.js)
-
-(done) menu.jsp: edit profile generic
+﻿(done) menu.jsp: edit profile generic
 (done) *.edit.jsp: view profile button
 (done) *.edit.jsp: change password + method in UserDAO
 (done) logout.jsp: create, redirect to home
 (done) menu.jsp: add logout button
 (done) page-login.jsp: email type -> email
 (done) ind.view.jsp
-(done) cor.view.jsp (Alex)
+(done) cor.view.jsp
+(done) cor-edit: add big text bubble for description
+(done) Insert date plugin for registration (.js)
