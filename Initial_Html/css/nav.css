@@ -1,0 +1,114 @@
+/**********************************
+Responsive navbar-brand image CSS
+- Remove navbar-brand padding for firefox bug workaround
+- add 100% height and width auto ... similar to how bootstrap img-responsive class works
+***********************************/
+
+
+/* EXAMPLE 3
+
+line height is 20px by default so add 30px top and bottom to equal the new .navbar-brand 80px height  */
+
+.example3 .navbar-brand {
+  height: 80px;
+}
+
+.example3 .nav >li >a {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.example3 .navbar-toggle {
+  padding: 10px;
+  margin: 25px 15px 25px 0;
+}
+
+
+.navbar-default {
+  background-color: #4e4e4e;
+  border-color: #656a7a;
+}
+.navbar-default .navbar-brand {
+  color: #cbe3e8;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #f6f7f9;
+}
+.navbar-default .navbar-text {
+  color: #cbe3e8;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #cbe3e8;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #f6f7f9;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu {
+  background-color: #4e4e4e;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a {
+  color: #cbe3e8;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover,
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {
+  color: #f6f7f9;
+  background-color: #656a7a;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > .divider {
+  background-color: #656a7a;
+}
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+  color: #f6f7f9;
+  background-color: #656a7a;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #f6f7f9;
+  background-color: #656a7a;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #f6f7f9;
+  background-color: #656a7a;
+}
+.navbar-default .navbar-toggle {
+  border-color: #656a7a;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: #656a7a;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #cbe3e8;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #cbe3e8;
+}
+.navbar-default .navbar-link {
+  color: #cbe3e8;
+}
+.navbar-default .navbar-link:hover {
+  color: #f6f7f9;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #cbe3e8;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #f6f7f9;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #f6f7f9;
+    background-color: #656a7a;
+  }
+}
