@@ -79,10 +79,12 @@
         } else {
       %>
 
-          <li class=" active">
+          <li class="active">
             <a href="page-login.jsp">Login</a>
           </li>
-
+          <li class="active">
+            <a href="register.jsp">Register</a>
+          </li>
       <%
         }
       %>

@@ -1,11 +1,9 @@
 <%--
 
-	page-register.jsp
+	register.jsp
 
 	This jsp application is part of the ACTEO Platform 1.0 and handles corporate
   and individual registering.
-
-  --To add: Facebook/Linkedin login.
 
 	@author Alexandros Lattas
   @author Fotis Katsgiannis
@@ -32,7 +30,7 @@
   			<div class="container">
   				<div class="row">
   					<div class="col-md-12">
-  						<h1>Login</h1>
+  						<h1>Register</h1>
   					</div>
   				</div>
   			</div>
@@ -45,7 +43,7 @@
   				    <div class="col-sm-5" style="float: none; margin: 0 auto;">
   					    <div class="basic-login">
 
-                  <!-- Login Form -->
+                  <!-- Registering Form -->
   						    <form role="form" action='registerController.jsp' method="Post">
       							<div class="form-group">
       	        			<label for="email"><i class="icon-user"></i> <b>Email</b></label>
@@ -69,16 +67,6 @@
   					    </div>
               </div>
             </div>
-
-
-  				<%--<div class="col-sm-7 social-login">
-  					<p>Or login with your Facebook or Twitter</p>
-  					<div class="social-login-buttons">
-  						<a href="#" class="btn-facebook-login">Login with Facebook</a>
-  						<a href="#" class="btn-twitter-login">Login with Twitter</a>
-  					</div>
-  					<div class="clearfix"></div>
-  				</div> --%>
           </div>
   	     </div>
        </div>

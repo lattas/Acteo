@@ -36,10 +36,10 @@
     <div class="container">
       <div class="row">
         <!-- Product Image & Available Colors -->
-        <div class="col-xs-4">
+        <div class="col-xs-6">
           <div class="img-thumbnail">
             <div class="img-responsive">
-            <img src="<%=profPicture(corporation.getLogoLink())%>" alt="Item Name">
+            <img style="max-width:400px; max-height: 400px;" src="<%=profPicture(corporation.getLogoLink())%>" alt="Item Name">
           </div>
           </div>
 
