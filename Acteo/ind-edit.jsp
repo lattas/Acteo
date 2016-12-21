@@ -16,6 +16,8 @@
 <%@ page import="gr.acteo.*" %>
 <%-- Overriding Custom Css --%>
 <link href="css/custom.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
 <%@page errorPage="error.jsp"%>
 
 <%
@@ -63,7 +65,7 @@
 		  <div class="form-group">
             <label class="col-lg-3 control-label">Date of Birth</label>
             <div class="col-lg-8">
-			  <input name="date" class="form-control" id="date" type="date" placeholder="<%=individual.getDate()%>" value="<%=nullToEmpty(individual.getDate())%>">
+			  <input name="date" class="form-control" id="date" type="text" placeholder="<%=individual.getDate()%>" value="<%=nullToEmpty(individual.getDate())%>">
             </div>
           </div>
 
@@ -136,6 +138,8 @@
 <hr>
 <%@ include file="footer.jsp"%>
 
+<%-- functions --%>
+
 <%!
   /** Instead of printing "null" when the field is empty, we make it an empty
   * string.
@@ -153,3 +157,15 @@
     return result;
   }
 %>
+
+<%-- Scripts --%>
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+  $( function() {
+    $( "#date" ).datepicker({
+      dateFormat: 'yy-mm-dd'
+    })
+  } );
+</script>
