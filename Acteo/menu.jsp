@@ -32,19 +32,19 @@
             <div id="navbar3" class="navbar-collapse collapse">
               <ul class="nav navbar-nav navbar-right">
                 <li class="link-3"><a href="home.jsp">Home</a></li>
-                <li class="link-3"><a href="browse_companies_by_candidate.jsp">Browse Companies</a></li>
-                <li class="link-3"><a href="browse_candidates_by_company.jsp">Browse Crew</a></li>
+                <li class="link-3"><a href="#">Browse Companies</a></li>
+                <li class="link-3"><a href="#">Browse Crew</a></li>
 
-                
+
 
       <%
         if (session.getAttribute("user") != null) {
           String editLink = session.getAttribute("userType") + "-edit.jsp";
           String viewLink = session.getAttribute("userType") + "-view.jsp"; %>
 
-          
+
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle link-3" data-toggle="dropdown" role="button" aria-expanded="false">My Profile <span class="caret"></span></a>
+                  <a href="#" class="dropdown-toggle link-3" data-toggle="dropdown" role="button" aria-expanded="false">My Profile<span class="caret"></span></a>
                   <ul class="dropdown-menu" role="menu">
                     <li><a href="<%=viewLink%>">VIew Profile</a></li>
                     <li><a href="<%=editLink%>">Edit Profile</a></li>

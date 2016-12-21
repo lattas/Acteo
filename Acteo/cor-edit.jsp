@@ -53,19 +53,26 @@
                 </div>
                 <h3>Company info</h3>
 
-               <form class="form-horizontal" role="form" action='corporationEditController.jsp' method="POST">
+               <form class="form-horizontal" role="form" action='corporationEditController.jsp' method="POST" id="corForm">
                   <div class="form-group">
                     <label class="col-lg-3 control-label">Title</label>
                     <div class="col-lg-8">
                       <input name="name" class="form-control" id="name" type="text" placeholder="<%=nullToEmpty(corporation.getName())%>" value="<%=nullToEmpty(corporation.getName())%>">
                     </div>
                   </div>
-                  <div class="form-group">
+                  <!--<div class="form-group">
                     <label class="col-lg-3 control-label">Description</label>
                     <div class="col-lg-8">
                       <input name="description" class="form-control" id="description" type="text" placeholder="<%=nullToEmpty(corporation.getDescription())%>" value="<%=nullToEmpty(corporation.getDescription())%>">
                     </div>
+                  </div>-->
+                  <div class="form-group">
+                    <label class="col-lg-3 control-label">Description</label>
+                    <div class="col-lg-8">
+                      <textarea rows="4" cols="76" name="description" style="width: 100%;"><%=nullToEmpty(corporation.getDescription())%></textarea>
+                    </div>
                   </div>
+
                   <div class="form-group">
                     <label class="col-lg-3 control-label">Website</label>
                     <div class="col-lg-8">
