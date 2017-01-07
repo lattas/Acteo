@@ -16,6 +16,8 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page errorPage="error.jsp" %>
+<%@ page import="gr.Acteo.*" %>
+<%@ page import="java.util.List"%>
 
 <%-- Session --%>
 
@@ -23,10 +25,15 @@
   String searchType = (String)session.getAttribute("searchType");
   String term = (String)session.getAttribute("term");
 
-  if (searchType == null) {
+  if (searchType == null || searchType == "") {
     searchType = "all";
-    term = "";
+    term = "all";
   }
+%>
+
+<%
+  CorporationDAO DAO = new CorporationDAO();
+  List<Corporation> corList = DAO.findCorporations(searchType,term);
 %>
 
 <%-- Overriding Custom Css --%>
@@ -56,7 +63,7 @@
                 <div class="row">
                     <div class="col-xs-8 col-xs-offset-2">
                       <div class="form-inline">
-                      <form action="browseCompanies.jsp" method="get">
+                      <form target="self" method="get">
                         <div class="form-group">
                           <input list="searchType" type="text" name="searchType" placeholder="Filter By" class="form-control">
                           <datalist id="searchType">
@@ -79,18 +86,24 @@
                         <div class="col-md-12">
                             <div class="products-slider">
                                 <!-- Company Slider Item -->
+
+                                <%
+                                  for (Corporation corporation: corList) {
+                                    out.println(corporation.getName());
+                                %>
+                                <br>
                                 <div class="shop-item">
                                     <!-- Company Image -->
                                     <div class="image">
-                                        <a href="page-company-details.html"><img src="img/company2.jpg" alt="Item Name"></a>
+                                        <a href="page-company-details.html"><img src="<%=profPicture(corporation.getLogoLink())%>" alt="Item Name"></a>
                                     </div>
                                     <!-- Company Title -->
                                     <div class="title">
-                                        <h3><a href="page-company-details.html">Company #</a></h3>
+                                        <h3><%=nullToEmpty(corporation.getName())%></h3>
                                     </div>
                                     <!-- Company Price -->
                                     <div class="price">
-                                         Company Category
+                                         <a href="<%=nullToEmpty(corporation.getWebsite())%>">Website</a>
                                     </div>
                                     <!-- View Button -->
                                     <div class="actions">
@@ -99,6 +112,9 @@
                                         </a>
                                     </div>
                                </div>
+                               <%
+                                  }
+                                %>
                             </div>
                         </div>
                     </div>
@@ -117,3 +133,31 @@
               </div>
           </div>
     <%@ include file="footer.jsp"%>
+
+    <%!
+      /** Instead of printing "null" when the field is empty, we make it an empty
+      * string.
+      *
+      * @param in the String to be examined.
+      *
+      * @return the string of not null or empty string if null.
+      */
+      String nullToEmpty(String in) {
+
+        String result = "";
+        if (in != null) {
+          result = in;
+        }
+        return result;
+      }
+    %>
+
+    <%!
+      String profPicture(String in) {
+        String pic = "img/avatar.jpg";
+        if (in != null && !in.equals("")){
+          pic = in;
+        }
+        return pic;
+      }
+    %>
