@@ -33,7 +33,7 @@
               <ul class="nav navbar-nav navbar-right">
                 <li class="link-3"><a href="home.jsp">Home</a></li>
                 <li class="link-3"><a href="browseCompanies.jsp">Browse Companies</a></li>
-                <li class="link-3"><a href="#">Browse Crew</a></li>
+                <li class="link-3"><a href="browseIndividuals.jsp">Browse Crew</a></li>
 
 
 
