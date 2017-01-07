@@ -17,6 +17,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page errorPage="error.jsp" %>
 
+<%-- Session --%>
+
+<%
+  String searchType = (String)session.getAttribute("searchType");
+  String term = (String)session.getAttribute("term");
+
+  if (searchType == null) {
+    searchType = "all";
+    term = "";
+  }
+%>
+
 <%-- Overriding Custom Css --%>
 <link href="css/custom.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="css/leaflet.css" />
@@ -24,11 +36,9 @@
 <!DOCTYPE html>
   <html>
     <%@ include file="header.jsp" %>
-    <body>
-        
+    <body class="bg-general">
+
         <%@ include file="menu.jsp" %>
-        <div class="login-bgimg">
-        <div>
         <!-- Page Title -->
         <div class="section section-breadcrumbs">
                 <div class="container">
@@ -43,32 +53,26 @@
         </div>
         <br>
         <div class="container">
-                <div class="row">    
+                <div class="row">
                     <div class="col-xs-8 col-xs-offset-2">
-                        <div class="input-group">
-                            <div class="input-group-btn search-panel">
-                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                                    <span id="search_concept">Filter by</span> <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#contains">Category</a></li>
-                                    <li><a href="#its_equal">Name</a></li>
-                                    <li><a href="#greather_than">Search in description </a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="#all">Anything</a></li>
-                                </ul>
-                            </div>
-                            <input type="hidden" name="search_param" value="all" id="search_param">         
-                            <input type="text" class="form-control" name="x" placeholder="Search term...">
-                            <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">
-                                    <span class="glyphicon glyphicon-search"></span> Search 
-                                </button>
-                            </span>
+                      <div class="form-inline">
+                      <form action="browseCompanies.jsp" method="get">
+                        <div class="form-group">
+                          <input list="searchType" type="text" name="searchType" placeholder="Filter By" class="form-control">
+                          <datalist id="searchType">
+                            <option value="Name">
+                            <option value="Category">
+                          </datalist>
                         </div>
+                        <div class="form-group">
+                          <input style="width:450px;" type="text" class="form-control" name="term" placeholder="Search term...">
+                        </div>
+                        <button type="submit" class="btn btn-default">Search</button>
+                      </form>
                     </div>
                 </div>
             </div>
+          </div>
             <div class="section">
                 <div class="container">
                     <div class="row">
@@ -91,7 +95,7 @@
                                     <!-- View Button -->
                                     <div class="actions">
                                         <a href="#" class="btn btn-info btn-lg">
-                                            <span class="glyphicon glyphicon-search"></span> Search 
+                                            <span class="glyphicon glyphicon-search"></span> Search
                                         </a>
                                     </div>
                                </div>
@@ -100,7 +104,6 @@
                     </div>
                 </div>
             </div>
-          </div>
           <!-- Call to Action Bar -->
           <div class="section section-white">
               <div class="container">
@@ -113,5 +116,4 @@
                   </div>
               </div>
           </div>
-    </div>
     <%@ include file="footer.jsp"%>
