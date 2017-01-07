@@ -10,6 +10,8 @@ package gr.acteo;
  */
 
  import java.sql.*;
+ import java.util.ArrayList;
+ import java.util.List;
 
  public class CorporationDAO {
     String email;
@@ -17,8 +19,6 @@ package gr.acteo;
     String logoLink;
     String description;
     String website;
-
-
 
    /**
    * Retrieves corporation object based on given email. If no company profile is
@@ -86,6 +86,14 @@ package gr.acteo;
 
    } // end method
 
+   /**
+   * Updates corporation data.
+   *
+   * @param Corporation the corporation to update.
+   *
+   * @throws Exception when no user is found in the database for these credentials.
+   */
+
    public void updateCorporationData(Corporation corporation) throws Exception{
 
           // Initialisation
@@ -129,4 +137,73 @@ package gr.acteo;
           } // end try
 
         } // end method
+
+        /**
+        * Retrieves corporation that match the selected search term.
+        *
+        * @param searchType the type of search term
+        * @param term the seach term
+        *
+        * @return list of Corporations that match the search term.
+        *
+        * @throws Exception when there is a connection with the connection.
+        */
+
+        public List<Corporation> findCorporations(String searchType, String term)
+                                                            throws Exception {
+
+            List<Corporation> corList = new ArrayList<Corporation>();
+
+            Connection con = null;
+            ResultSet rs;
+            PreparedStatement stmt1;
+            String sqlquery;
+
+            // Establishing Connection
+            DB db = new DB();
+
+            try {
+
+              db.open(); // open connection
+
+              con = db.getConnection(); // get connection
+
+              // Quering Corporations
+              if (searchType != "all") {
+
+                sqlquery = "SELECT * FROM Corporation WHERE ? LIKE '%?%";
+                stmt1 = con.prepareStatement(sqlquery);
+                stmt1.setString(1, '%'+searchType+'%');
+                stmt1.setString(2, term);
+
+              } else {
+
+                sqlquery = "SELECT * FROM Corporation LIMIT 20";
+                stmt1 = con.prepareStatement(sqlquery);
+              }
+
+              rs = stmt1.executeQuery();
+
+              while (rs.next()) {
+
+                corList.add(new Corporation("",rs.getString("email"),rs.getString("name"),
+                    rs.getString("logo"), rs.getString("description"), rs.getString("website")));
+              }
+
+              stmt1.close();
+              db.close();
+
+            } catch (Exception e) {
+
+              throw new Exception(e.getMessage());
+
+            } finally {
+
+              if(con != null)
+                con.close();
+
+            } // end try
+
+            return corList;
+        }
  }
