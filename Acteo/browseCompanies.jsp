@@ -74,7 +74,7 @@
                         <div class="form-group">
                           <input style="width:450px;" type="text" class="form-control" name="term" placeholder="Search term...">
                         </div>
-                        <button type="submit" class="btn btn-default">Search</button>
+                        <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span> Search</button>
                       </form>
                     </div>
                 </div>
@@ -91,7 +91,7 @@
                                   for (Corporation corporation: corList) {
                                     out.println(corporation.getName());
                                 %>
-                                <br>
+
                                 <div class="shop-item">
                                     <!-- Company Image -->
                                     <div class="image">
@@ -108,7 +108,7 @@
                                     <!-- View Button -->
                                     <div class="actions">
                                         <a href="#" class="btn btn-info btn-lg">
-                                            <span class="glyphicon glyphicon-search"></span> Search
+                                            <span class="glyphicon glyphicon-briefcase"></span> Details
                                         </a>
                                     </div>
                                </div>
