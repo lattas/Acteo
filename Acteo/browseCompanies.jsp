@@ -92,10 +92,10 @@
                                     out.println(corporation.getName());
                                 %>
 
-                                <div class="shop-item">
+                                <div class="shop-item" style="height:400px;">
                                     <!-- Company Image -->
-                                    <div class="image">
-                                        <a href="page-company-details.html"><img src="<%=profPicture(corporation.getLogoLink())%>" alt="Item Name"></a>
+                                    <div class="image" style="height:250px;">
+                                        <a href="page-company-details.html"><img src="<%=profPicture(corporation.getLogoLink())%>" style="max-height:250px;margin:auto;" alt="Item Name"></a>
                                     </div>
                                     <!-- Company Title -->
                                     <div class="title">
