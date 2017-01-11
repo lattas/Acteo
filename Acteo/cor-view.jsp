@@ -22,7 +22,19 @@
     Corporation corporation;
     String email = (String)session.getAttribute("user");
     CorporationDAO dao = new CorporationDAO();
-    corporation = dao.getCorporationData(email);
+
+%>
+
+<%
+    if (request.getParameter("corFromSearch") == null) {
+
+      corporation = dao.getCorporationData(email);
+
+    } else {
+
+      corporation = dao.getCorporationData(request.getParameter("corFromSearch"));
+
+    }
 %>
 
 <%-- HTML --%>

@@ -63,7 +63,7 @@ package gr.acteo;
 
        /* Company not found */
        } else {
-         throw new Exception("Wrong Username or Password");
+         throw new Exception("Could not receive Corporation Data");
        }
 
          /* Close */

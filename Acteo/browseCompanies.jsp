@@ -99,7 +99,7 @@
                                 <div class="shop-item" style="height:400px;">
                                     <!-- Company Image -->
                                     <div class="image" style="height:250px;">
-                                        <a href="page-company-details.html"><img src="<%=profPicture(corporation.getLogoLink())%>" style="max-height:250px;margin:auto;" alt="Item Name"></a>
+                                        <a><img src="<%=profPicture(corporation.getLogoLink())%>" style="max-height:250px;margin:auto;" alt="Item Name"></a>
                                     </div>
                                     <!-- Company Title -->
                                     <div class="title">
@@ -146,7 +146,7 @@
                               message2 = "View my profile";
 
                             } else {
-                              link = "register.jsp";
+                              link = "page-login.jsp";
                               message1 = "Create your profile now!";
                               message2 = "Login";
                             }
