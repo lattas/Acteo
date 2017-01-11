@@ -16,14 +16,19 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page errorPage="error.jsp" %>
-<%@ page import="gr.Acteo.*" %>
+<%@ page import="gr.acteo.*" %>
 <%@ page import="java.util.List"%>
 
 <%-- Session --%>
 
+<%!
+  String searchType;
+  String term;
+%>
+
 <%
-  String searchType = (String)request.getParameter("searchType");
-  String term = (String)request.getParameter("term");
+  searchType = (String)request.getParameter("searchType");
+  term = (String)request.getParameter("term");
 
   if (searchType == null || searchType == "") {
     searchType = "all";
@@ -54,8 +59,6 @@
                         <div class="row">
                                 <div class="col-md-12">
                                         <h1>Browse Companies</h1>
-
-
                                 </div>
                         </div>
                 </div>
@@ -69,7 +72,7 @@
                         <div class="form-group">
                           <select name="searchType" form="search" class="form-control">
                             <option value="Name" >Name</option>
-                            <option value="Description" <%if(request.getParameter("searchType").equals("Description")){out.println("selected='selected'");}%>>Description</option>
+                            <option value="Description" <%if(searchType != null) if(searchType.equals("Description")) {out.println("selected='selected'");}%>>Description</option>
                           </select>
                         </div>
                         <div class="form-group">
