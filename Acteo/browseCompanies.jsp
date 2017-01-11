@@ -107,10 +107,12 @@
                                          <a href="<%=nullToEmpty(corporation.getWebsite())%>">Website</a>
                                     </div>
                                     <!-- View Button -->
-                                    <div class="actions">
-                                        <a href="#" class="btn btn-info btn-lg">
-                                            <span class="glyphicon glyphicon-briefcase"></span> Details
-                                        </a>
+
+                                    <div class="actions" method="POST">
+                                      <form action="cor-view.jsp">
+                                          <input type="hidden" name="corFromSearch" value="<%=corporation.getEmail()%>">
+                                          <button type="submit" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-briefcase"></span> Details</button>
+                                      </form>
                                     </div>
                                </div>
                                <%
@@ -127,7 +129,26 @@
                   <div class="row">
                       <div class="col-md-12">
                           <div class="calltoaction-wrapper">
-                              <h3>Content is eveything!</h3> <a href="view_candidate_by_candidate.html" class="btn btn-small">View my profile</a>
+
+                            <%!
+                              String link;
+                              String message1;
+                              String message2;
+                            %>
+
+                            <%
+                            if (session.getAttribute("user") != null) {
+                              link = session.getAttribute("userType") + "-view.jsp";
+                              message1 = "Content is everything!";
+                              message2 = "View my profile";
+
+                            } else {
+                              link = "register.jsp";
+                              message1 = "Create your profile now!";
+                              message2 = "Login";
+                            }
+                              %>
+                              <h3><%=message1%></h3> <a href="<%=link%>" class="btn btn-small"><%=message2%></a>
                           </div>
                       </div>
                   </div>
