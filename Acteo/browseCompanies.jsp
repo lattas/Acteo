@@ -31,6 +31,8 @@
   }
 %>
 
+<%-- Searching --%>
+
 <%
   CorporationDAO DAO = new CorporationDAO();
   List<Corporation> corList = DAO.findCorporations(searchType,term);
@@ -63,13 +65,12 @@
                 <div class="row">
                     <div class="col-xs-8 col-xs-offset-2">
                       <div class="form-inline">
-                      <form target="self" method="get">
+                      <form target="_self" method="get" id="search">
                         <div class="form-group">
-                          <input list="searchType" type="text" name="searchType" placeholder="Filter By" class="form-control">
-                          <datalist id="searchType">
-                            <option value="Name">
-                            <option value="Category">
-                          </datalist>
+                          <select name="searchType" form="search" class="form-control">
+                            <option value="Name">Name</option>
+                            <option value="Category">Description</option>
+                          </select>
                         </div>
                         <div class="form-group">
                           <input style="width:450px;" type="text" class="form-control" name="term" placeholder="Search term...">
