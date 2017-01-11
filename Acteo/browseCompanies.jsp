@@ -22,8 +22,8 @@
 <%-- Session --%>
 
 <%
-  String searchType = (String)session.getAttribute("searchType");
-  String term = (String)session.getAttribute("term");
+  String searchType = (String)request.getParameter("searchType");
+  String term = (String)request.getParameter("term");
 
   if (searchType == null || searchType == "") {
     searchType = "all";
@@ -69,11 +69,11 @@
                         <div class="form-group">
                           <select name="searchType" form="search" class="form-control">
                             <option value="Name">Name</option>
-                            <option value="Category">Description</option>
+                            <option value="Description">Description</option>
                           </select>
                         </div>
                         <div class="form-group">
-                          <input style="width:450px;" type="text" class="form-control" name="term" placeholder="Search term...">
+                          <input style="width:450px;" type="text" class="form-control" name="term" placeholder="<%="Search for:"+term%>">
                         </div>
                         <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span> Search</button>
                       </form>

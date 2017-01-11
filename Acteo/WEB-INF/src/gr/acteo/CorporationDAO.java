@@ -169,12 +169,15 @@ package gr.acteo;
               con = db.getConnection(); // get connection
 
               // Quering Corporations
+              //if (searchType != "all" && searchType != "Name" && searchType != "Description") {
+              //  throw new Exception("Illegal search type. Please <a href='' onclick='history.go(-1)''>Try Again</a>");
+              //}
+
               if (searchType != "all") {
 
-                sqlquery = "SELECT * FROM Corporation WHERE ? LIKE '%?%";
+                sqlquery = "SELECT * FROM Corporation WHERE " + searchType + " LIKE ?";
                 stmt1 = con.prepareStatement(sqlquery);
-                stmt1.setString(1, '%'+searchType+'%');
-                stmt1.setString(2, term);
+                stmt1.setString(1, "%"+term+"%");
 
               } else {
 
