@@ -68,12 +68,12 @@
                       <form target="_self" method="get" id="search">
                         <div class="form-group">
                           <select name="searchType" form="search" class="form-control">
-                            <option value="Name">Name</option>
-                            <option value="Description">Description</option>
+                            <option value="Name" >Name</option>
+                            <option value="Description" <%if(request.getParameter("searchType").equals("Description")){out.println("selected='selected'");}%>>Description</option>
                           </select>
                         </div>
                         <div class="form-group">
-                          <input style="width:450px;" type="text" class="form-control" name="term" placeholder="<%="Search for:"+term%>">
+                          <input style="width:450px;" type="text" class="form-control" name="term" placeholder="<%="Search for: "+term%>">
                         </div>
                         <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span> Search</button>
                       </form>
