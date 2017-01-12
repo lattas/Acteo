@@ -16,6 +16,7 @@
 <%@ page errorPage="error.jsp" %>
 <%@ page import="gr.acteo.*" %>
 <%@ page import="java.util.List"%>
+<%@ page import="java.util.Calendar"%>
 
 <%-- Overriding Custom Css --%>
 <link href="css/custom.css" rel="stylesheet" type="text/css">
@@ -46,6 +47,7 @@
   IndividualDAO DAO = new IndividualDAO();
   List<Individual> indList = DAO.findIndividuals(searchType,term);
 %>
+
 
 <%-- HTML --%>
 <!DOCTYPE html>
@@ -106,7 +108,7 @@
 
                                         <!-- Individual Credentials-->
                                         <div class="price">
-                                                <%=nullToEmpty(individual.getSpecialty())+","+nullToEmpty(individual.getDate())%>
+                                                <%=nullToEmpty(individual.getSpecialty())+", "+getAge(individual.getDate())%>
                                         </div>
                                         <!-- Individual Description-->
                                         <div class="description">
@@ -153,5 +155,32 @@
       pic = in;
     }
     return pic;
+  }
+%>
+
+<%!
+  /**
+  * Gets age from String using Jodatime
+  *
+  * @param date birthday date
+  *
+  * @return age
+  *
+  * @throws Exception when can't convert to int
+  */
+  String getAge(String date) {
+    String age;
+    try {
+      int year = Integer.parseInt(date.split("-")[0]);
+
+      Calendar now = Calendar.getInstance();   // Gets the current date and time
+      int yearNow = now.get(Calendar.YEAR);
+
+      age = Integer.toString (yearNow - year);
+
+    } catch (Exception e){
+      age = "-";
+    }
+    return age;
   }
 %>
