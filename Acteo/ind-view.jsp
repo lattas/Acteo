@@ -73,7 +73,7 @@
                                 <div class="col-xs-12 col-sm-8">
                                     <h2><strong>Explore</strong></h2>
                                     <p><small>Browse Other Individuals</small></p>
-                                    <a href="#" class="btn btn"><i class="icon-shopping-cart icon-white"></i> Browse</a>
+                                    <a href="browseIndividuals.jsp" class="btn btn"><i class="icon-shopping-cart icon-white"></i> Browse</a>
                                 </div><!--/col-->
                             </div><!--/row-->
                   </div><!--/panel-body-->
