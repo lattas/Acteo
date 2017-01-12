@@ -48,6 +48,12 @@
           <i>Note: For your own safety we do not store your data files. Please upload them to your drive and insert the link indicating the file.</i>
         </div>
 
+        <div class="alert alert-warning alert-dismissable">
+          <a class="panel-close close" data-dismiss="alert">×</a>
+          <i class="fa fa-coffee"></i>
+          <strong>Warning!</strong> You will not show up to others if you do not fill the following information.
+        </div>
+
         <form class="form-horizontal" role="form" action='individualEditController.jsp' method="POST">
 
           <div class="form-group">

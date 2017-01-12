@@ -51,7 +51,12 @@
                       Please upload them to your drive and insert the link indicating the file.
                   </i>
                 </div>
-                <h3>Company info</h3>
+
+                <div class="alert alert-warning alert-dismissable">
+                  <a class="panel-close close" data-dismiss="alert">×</a>
+                  <i class="fa fa-coffee"></i>
+                  <strong>Warning!</strong> You will not show up to others if you do not fill the following information.
+                </div>
 
                <form class="form-horizontal" role="form" action='corporationEditController.jsp' method="POST" id="corForm">
                   <div class="form-group">
