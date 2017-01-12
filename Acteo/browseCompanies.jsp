@@ -93,7 +93,6 @@ browseCompanies.jsp
 
                                 <%
                                   for (Corporation corporation: corList) {
-                                    out.println(corporation.getName());
                                 %>
 
                                 <div class="shop-item" style="height:400px;">
