@@ -58,13 +58,13 @@
                                     <h2><%=nullToEmpty(individual.getName()) + " " + nullToEmpty(individual.getSurname())%></h2>
                                     <p><strong>Date Of Birth: </strong><%=individual.getDate()%></p>
                                     <p><strong>Gender: </strong><%=individual.getGender()%></p>
-                                    <p><strong>Specialty:</strong><%=individual.getSpecialty()%></p>
+                                    <p><strong>Specialty :</strong><%=individual.getSpecialty()%></p>
+                                    <p><strong>SB Code :</strong><%=individual.getSb()%></p>
                                 </div><!--/col-->
 
                                 <div class="portfolio-item-description col-sm-8">
                                   <ul class="no-list-style">
                                     <li class="portfolio-visit-btn"><a href="<%=nullToEmptyLink(individual.getCvLink())%>" class="btn">View CV</a>
-                                        <a href="<%=nullToEmptyLink(individual.getSb())%>" class="btn">View SL</a>
                                         <a href="<%="mailto:" + individual.getEmail() + "?Subject=Hello " + individual.getName()%>" class="btn">Send Message</a>
                                     </li>
                                   </ul>
