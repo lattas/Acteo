@@ -26,7 +26,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class=" img-responsive" href="home.jsp"><img src="img/acteologo.png"  alt="ACTEO">
+              <a class=" img-responsive" href="home.jsp"><img src="img/acteologo.png"  alt="ACTEO" style="padding-top:10px;">
               </a>
             </div>
             <div id="navbar3" class="navbar-collapse collapse">
