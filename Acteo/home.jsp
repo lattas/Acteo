@@ -36,7 +36,7 @@
 						<!-- Slide Text -->
 						<h3 class="subtitle">Our team hopes to bridge the gap that exists in maritime recruiting</h3>
 						<!-- Slide Image -->
-						<img class="slide-img" src="img/homepage-slider/slide1.png" alt="Slide 1" />
+						<img class="slide-img" src="img/homepage-slider/slide1.png" alt="Slide 1" style="padding-right:30px;"/>
 					</li>
 					<!-- End Slide 1 -->
 					<!-- Slide 2 -->
@@ -95,7 +95,7 @@
 								<ul>
 									<li class="portfolio-project-name">Individuals</li>
 									<li>Create your profile, showcase your skills and embark into your new journey!</li>
-									<li>Actions Browse and contact companies and crew members</li>
+									<li>Actions: Browse and contact corporations</li>
 									<li class="read-more"><a href="page-login.jsp" class="btn">Become a member</a>
                         <a href="browseCompanies.jsp" class="btn">Find Companies</a></li>
 								</ul>
