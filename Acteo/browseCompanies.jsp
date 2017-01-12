@@ -93,6 +93,7 @@ browseCompanies.jsp
 
                                 <%
                                   for (Corporation corporation: corList) {
+                                    if (corporation.getName() != null) {
                                 %>
 
                                 <div class="shop-item" style="height:400px;">
@@ -118,7 +119,7 @@ browseCompanies.jsp
                                     </div>
                                </div>
                                <%
-                                  }
+                                  }}
                                 %>
                             </div>
                         </div>

@@ -94,6 +94,7 @@
                     <div class="row">
                             <%
                               for (Individual individual: indList) {
+                                if (individual.getName() != null) {
                             %>
                               <div class="col-sm-4">
                                 <div class="shop-item" style="height:500px;">
@@ -120,12 +121,47 @@
                                         </div>
                                 </div>
                               </div>
-                              <%}%>
+                              <%
+                                }}
+                              %>
                             </div>
                             <!-- End Individual -->
 
                     </div>
                 </div>
+
+                <!-- Call to Action Bar -->
+                <div class="section section-white">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="calltoaction-wrapper">
+
+                                  <%!
+                                    String link;
+                                    String message1;
+                                    String message2;
+                                  %>
+
+                                  <%
+                                  if (session.getAttribute("user") != null) {
+                                    link = session.getAttribute("userType") + "-view.jsp";
+                                    message1 = "Content is everything!";
+                                    message2 = "View my profile";
+
+                                  } else {
+                                    link = "page-login.jsp";
+                                    message1 = "Create your profile now!";
+                                    message2 = "Login";
+                                  }
+                                    %>
+                                    <h3><%=message1%></h3> <a href="<%=link%>" class="btn btn-small"><%=message2%></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
     <%@ include file="footer.jsp"%>
 
 <%-- Functions --%>
