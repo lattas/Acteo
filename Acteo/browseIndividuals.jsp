@@ -99,11 +99,11 @@
                                 <div class="shop-item" style="height:500px;">
                                         <!-- Individual Image -->
                                         <div class="image">
-                                                <a><img src="<%=profPicture(individual.getPhotoLink())%>" style="height:250px;" alt="Item Name"></a>
+                                                <a><img src="<%=profPicture(individual.getPhotoLink())%>" style="height:220px;" alt="Item Name"></a>
                                         </div>
                                         <!-- Individual Title -->
-                                        <div class="title">
-                                                <h3><%=nullToEmpty(individual.getName())+" "+nullToEmpty(individual.getSurname())%></h3>
+                                        <div class="title panel panel-heading">
+                                                <h3 style="font-size:16px"><%=nullToEmpty(individual.getName())+" "+nullToEmpty(individual.getSurname())%></h3>
                                         </div>
 
                                         <!-- Individual Credentials-->
@@ -176,11 +176,16 @@
       Calendar now = Calendar.getInstance();   // Gets the current date and time
       int yearNow = now.get(Calendar.YEAR);
 
-      age = Integer.toString (yearNow - year);
-
+      int ageInt = yearNow - year;
+      if (ageInt < 1) {
+        age = "-";
+      } else {
+        age = Integer.toString(ageInt);
+      }
     } catch (Exception e){
       age = "-";
     }
+
     return age;
   }
 %>
