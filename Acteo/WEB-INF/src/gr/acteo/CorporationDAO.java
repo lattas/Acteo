@@ -208,5 +208,5 @@ package gr.acteo;
             } // end try
 
             return corList;
-        }
+        } // end findCorporations
  }
