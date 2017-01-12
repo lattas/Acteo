@@ -111,13 +111,12 @@
                                         <div class="price">
                                                 <%=nullToEmpty(individual.getSpecialty())+", "+getAge(individual.getDate())%>
                                         </div>
-                                        <!-- Individual Description-->
-                                        <div class="description">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse mattis, nulla id pretium malesuada, dui est laoreet risus, ac rhoncus eros diam id odio.</p>
-                                        </div>
                                         <!-- View Button -->
                                         <div class="actions">
-                                                <a href="view_candidate_by_company.html" class="btn"><i class="icon-shopping-cart icon-white"></i> View</a>
+                                          <form action="ind-view.jsp" method="POST">
+                                              <input type="hidden" name="corFromSearch" value="<%=individual.getEmail()%>">
+                                              <button type="submit" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-user"></span> Details &amp; Contact</button>
+                                          </form>
                                         </div>
                                 </div>
                               </div>
