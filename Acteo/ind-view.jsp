@@ -22,7 +22,18 @@
     Individual individual;
     String email = (String)session.getAttribute("user");
     IndividualDAO dao = new IndividualDAO();
+
+%>
+
+<%
+  if (request.getParameter("indFromSearch") == null) {
+
     individual = dao.getIndividualData(email);
+
+  } else {
+
+    individual = dao.getIndividualData(request.getParameter("indFromSearch"));
+  }
 %>
 
 <%-- HTML --%>

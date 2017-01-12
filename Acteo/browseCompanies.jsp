@@ -111,8 +111,8 @@ browseCompanies.jsp
                                     </div>
                                     <!-- View Button -->
 
-                                    <div class="actions" method="POST">
-                                      <form action="cor-view.jsp">
+                                    <div class="actions" >
+                                      <form action="cor-view.jsp" method="POST">
                                           <input type="hidden" name="corFromSearch" value="<%=corporation.getEmail()%>">
                                           <button type="submit" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-briefcase"></span> Details</button>
                                       </form>

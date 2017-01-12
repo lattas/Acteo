@@ -97,7 +97,7 @@
                                 if (individual.getName() != null) {
                             %>
                               <div class="col-sm-4">
-                                <div class="shop-item" style="height:500px;">
+                                <div class="shop-item" style="height:420px;">
                                         <!-- Individual Image -->
                                         <div class="image">
                                                 <a><img src="<%=profPicture(individual.getPhotoLink())%>" style="height:220px;" alt="Item Name"></a>
@@ -114,7 +114,7 @@
                                         <!-- View Button -->
                                         <div class="actions">
                                           <form action="ind-view.jsp" method="POST">
-                                              <input type="hidden" name="corFromSearch" value="<%=individual.getEmail()%>">
+                                              <input type="hidden" name="indFromSearch" value="<%=individual.getEmail()%>">
                                               <button type="submit" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-user"></span> Details &amp; Contact</button>
                                           </form>
                                         </div>
