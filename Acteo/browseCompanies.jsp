@@ -1,11 +1,9 @@
 <%--
 
-	page-login.jsp
+browseCompanies.jsp
 
-	This jsp application is part of the ACTEO Platform 1.0 and handles corporate
-  and individual user login that are registered.
-
-  --To add: Facebook/Linkedin login.
+	This jsp application is part of the ACTEO Platform 1.0 and handles queries for
+  for corporate profiles.
 
 	@author Alexandros Lattas
   @author Fotis Katsgiannis
@@ -19,12 +17,14 @@
 <%@ page import="gr.acteo.*" %>
 <%@ page import="java.util.List"%>
 
-<%-- Session --%>
+<%-- Initialisations --%>
 
 <%!
   String searchType;
   String term;
 %>
+
+<%-- Parammeters --%>
 
 <%
   searchType = (String)request.getParameter("searchType");
@@ -75,8 +75,8 @@
                             <option value="Description" <%if(searchType != null) if(searchType.equals("Description")) {out.println("selected='selected'");}%>>Description</option>
                           </select>
                         </div>
-                        <div class="form-group">
-                          <input style="width:450px;" type="text" class="form-control" name="term" placeholder="<%="Search for: "+term%>">
+                        <div class="form-group" style="width:500px;max-width:80%;">
+                          <input type="text" style="width:100%;" class="form-control" name="term" placeholder="<%="Search for: "+term%>">
                         </div>
                         <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span> Search</button>
                       </form>
