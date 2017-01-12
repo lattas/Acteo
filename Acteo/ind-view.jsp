@@ -14,16 +14,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page errorPage="error.jsp" %>
 <%@ page import="gr.acteo.*" %>
+
 <%-- Overriding Custom Css --%>
+
 <link href="css/custom.css" rel="stylesheet" type="text/css">
-<%@page errorPage="error.jsp"%>
+
+<%-- Attribute --%>
 
 <%
     Individual individual;
     String email = (String)session.getAttribute("user");
     IndividualDAO dao = new IndividualDAO();
-
 %>
+
+<%-- Parameters --%>
 
 <%
   if (request.getParameter("indFromSearch") == null) {
@@ -50,56 +54,59 @@
               <div class="row">
                 <div class="col-md-8" style="float: none; margin: 0 auto;">
 
+                  <%-- Photo --%>
                   <div class="panel panel-default">
                     <div class="panel-body">
                       <div class="row">
                         <div class="col-xs-12 col-sm-4 text-center">
-                                        <img src="<%=profPicture(individual.getPhotoLink())%>" alt="" class="center-block img-circle img-responsive">
-                                        <ul class="list-inline ratings text-center" title="Ratings">
-                                          <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
-                                          <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
-                                          <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
-                                          <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
-                                          <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
-                                        </ul>
-                                </div><!--/col-->
+                            <img src="<%=profPicture(individual.getPhotoLink())%>" alt="" class="center-block img-circle img-responsive">
+                            <ul class="list-inline ratings text-center" title="Ratings">
+                              <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
+                              <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
+                              <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
+                              <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
+                              <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
+                            </ul>
+                        </div>
 
+                        <%-- Name --%>
+                        <div class="col-xs-12 col-sm-8">
+                            <h2><%=nullToEmpty(individual.getName()) + " " + nullToEmpty(individual.getSurname())%></h2>
+                            <p><strong>Date Of Birth: </strong><%=individual.getDate()%></p>
+                            <p><strong>Gender: </strong><%=individual.getGender()%></p>
+                            <p><strong>Specialty :</strong><%=individual.getSpecialty()%></p>
+                            <p><strong>SB Code :</strong><%=individual.getSb()%></p>
+                        </div>
 
-                                <div class="col-xs-12 col-sm-8">
-                                    <h2><%=nullToEmpty(individual.getName()) + " " + nullToEmpty(individual.getSurname())%></h2>
-                                    <p><strong>Date Of Birth: </strong><%=individual.getDate()%></p>
-                                    <p><strong>Gender: </strong><%=individual.getGender()%></p>
-                                    <p><strong>Specialty :</strong><%=individual.getSpecialty()%></p>
-                                    <p><strong>SB Code :</strong><%=individual.getSb()%></p>
-                                </div><!--/col-->
+                        <%-- CV --%>
+                        <div class="portfolio-item-description col-sm-8">
+                          <ul class="no-list-style">
+                            <li class="portfolio-visit-btn"><a href="<%=nullToEmptyLink(individual.getCvLink())%>" class="btn">View CV</a>
+                                <a href="<%="mailto:" + individual.getEmail() + "?Subject=Hello " + individual.getName()%>" class="btn">Send Message</a>
+                            </li>
+                          </ul>
+                        </div>
 
-                                <div class="portfolio-item-description col-sm-8">
-                                  <ul class="no-list-style">
-                                    <li class="portfolio-visit-btn"><a href="<%=nullToEmptyLink(individual.getCvLink())%>" class="btn">View CV</a>
-                                        <a href="<%="mailto:" + individual.getEmail() + "?Subject=Hello " + individual.getName()%>" class="btn">Send Message</a>
-                                    </li>
-                                  </ul>
-                                </div>
-
-                                <div class="col-xs-12 col-sm-8">
-                                    <h2><strong>Explore</strong></h2>
-                                    <p><small>Browse Other Individuals</small></p>
-                                    <a href="browseIndividuals.jsp" class="btn btn"><i class="icon-shopping-cart icon-white"></i> Browse</a>
-                                </div><!--/col-->
-                            </div><!--/row-->
-                  </div><!--/panel-body-->
-                </div><!--/panel-->
-
-
-
+                        <%-- Browse --%>
+                        <div class="col-xs-12 col-sm-8">
+                            <h2><strong>Explore</strong></h2>
+                            <p><small>Browse Other Individuals</small></p>
+                            <a href="browseIndividuals.jsp" class="btn btn"><i class="icon-shopping-cart icon-white"></i> Browse</a>
+                        </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-
         </div> <%-- row --%>
       </div> <%-- container --%>
     </div> <%-- section --%>
 
+<%-- Footer --%>
+
 <%@ include file="footer.jsp"%>
+
+<%-- Functions --%>
 
 <%!
   /** Instead of printing "null" when the field is empty, we make it an empty
@@ -154,5 +161,3 @@
     return pic;
   }
 %>
-
-<%-- calculate Age --%>

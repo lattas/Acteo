@@ -45,7 +45,7 @@
   				    <div class="col-sm-5" style="float: none; margin: 0 auto;">
   					    <div class="basic-login">
 
-                  <!-- Login Form -->
+                  <%-- Login Form --%>
   						    <form role="form" action='loginController.jsp' method="POST">
       							<div class="form-group">
       	        			<label for="email"><i class="icon-user"></i> <b>Email</b></label>
@@ -56,15 +56,14 @@
       								<input name="password" class="form-control" id="password" type="password" placeholder="">
       							</div>
       							<div class="form-group">
-      								<!-- <label class="checkbox">
-      									<input type="checkbox"> Remember me
-      								</label> -->
       								<a href="page-password-reset.html" class="forgot-password">Forgot password?</a>
       								<button type="submit" class="btn pull-right">Login</button>
       								<div class="clearfix"></div>
       							</div>
   						    </form>
   					    </div>
+
+                <%-- Register Link --%>
 
                 <div class="basic-login">
                   <div class="not-member">
@@ -73,17 +72,9 @@
                 </div>
               </div>
             </div>
-
-
-  				<%--<div class="col-sm-7 social-login">
-  					<p>Or login with your Facebook or Twitter</p>
-  					<div class="social-login-buttons">
-  						<a href="#" class="btn-facebook-login">Login with Facebook</a>
-  						<a href="#" class="btn-twitter-login">Login with Twitter</a>
-  					</div>
-  					<div class="clearfix"></div>
-  				</div> --%>
           </div>
   	     </div>
        </div>
-       <%@ include file="footer.jsp"%>
+       
+<%-- Footer --%>
+<%@ include file="footer.jsp"%>

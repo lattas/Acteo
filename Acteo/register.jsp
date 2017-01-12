@@ -43,7 +43,7 @@
   				    <div class="col-sm-5" style="float: none; margin: 0 auto;">
   					    <div class="basic-login">
 
-                  <!-- Registering Form -->
+                  <%-- Registering Form --%>
   						    <form role="form" action='registerController.jsp' method="Post">
       							<div class="form-group">
       	        			<label for="email"><i class="icon-user"></i> <b>Email</b></label>
@@ -70,4 +70,6 @@
           </div>
   	     </div>
        </div>
-       <%@ include file="footer.jsp"%>
+       
+<%-- Footer --%>
+<%@ include file="footer.jsp"%>

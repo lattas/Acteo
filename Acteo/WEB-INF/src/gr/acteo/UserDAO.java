@@ -218,7 +218,7 @@ package gr.acteo;
 
      } catch (Exception e) {
 
-       throw new Exception("There was an error while chaning the password:" + e.getMessage());
+       throw new Exception("There was an error while changing the password:" + e.getMessage());
 
      } finally {
 
