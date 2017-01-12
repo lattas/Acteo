@@ -94,9 +94,10 @@
 							<div class="portfolio-info-fade">
 								<ul>
 									<li class="portfolio-project-name">Individuals</li>
-									<li>Profile Creation - Editing - Display</li>
-									<li>Action: Show interest, Browse companies</li>
-									<li class="read-more"><a href="browse_companies_by_candidate.html" class="btn">Review</a></li>
+									<li>Create your profile, showcase your skills and embark into your new journey!</li>
+									<li>Actions Browse and contact companies and crew members</li>
+									<li class="read-more"><a href="page-login.jsp" class="btn">Become a member</a>
+                        <a href="browseCompanies.jsp" class="btn">Find Companies</a></li>
 								</ul>
 							</div>
 						</div>
@@ -108,10 +109,11 @@
 							</div>
 							<div class="portfolio-info-fade">
 								<ul>
-									<li class="portfolio-project-name">Organisations</li>
-									<li>Profile Creation - Editing - Display</li>
-									<li>Action: Show Interest, Browse Individuals</li>
-									<li class="read-more"><a href="browse_candidates_by_company.html" class="btn">Review</a></li>
+									<li class="portfolio-project-name">Corporations</li>
+									<li>Create a profile and find crew members!</li>
+									<li>Actions: Browse and contact crew members</li>
+                  <li class="read-more"><a href="page-login.jsp" class="btn">Become a member</a>
+                        <a href="browseIndividuals.jsp" class="btn">Find Crew Members</a></li>
 								</ul>
 							</div>
 						</div>
