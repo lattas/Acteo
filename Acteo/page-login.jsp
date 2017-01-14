@@ -56,7 +56,6 @@
       								<input name="password" class="form-control" id="password" type="password" placeholder="">
       							</div>
       							<div class="form-group">
-      								<a href="page-password-reset.html" class="forgot-password">Forgot password?</a>
       								<button type="submit" class="btn pull-right">Login</button>
       								<div class="clearfix"></div>
       							</div>
