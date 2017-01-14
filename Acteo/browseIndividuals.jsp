@@ -56,9 +56,7 @@
     <body class="bg-general">
 
         <%@ include file="menu.jsp" %>
-
-<!-- Page Title -->
-
+        <!-- Page Title -->
         <div class="section section-breadcrumbs">
                 <div class="container">
                         <div class="row">
@@ -69,87 +67,69 @@
                 </div>
         </div>
         <br>
-
-<%-- Search Bar --%>
-
           <div class="container">
                   <div class="row">
                       <div class="col-xs-8 col-xs-offset-2">
                         <div class="form-inline">
                         <form target="_self" method="get" id="search">
                           <div class="form-group">
-
                             <select name="searchType" form="search" class="form-control">
                               <option value="Name">Name</option>
-                              <option value="Surname" <%if(searchType != null) if(searchType.equals("Surname"))
-                                  {out.println("selected='selected'");}%>>Surname</option>
-                              <option value="Specialty" <%if(searchType != null) if(searchType.equals("Specialty"))
-                                  {out.println("selected='selected'");}%>>Specialty</option>
+                              <option value="Surname" <%if(searchType != null) if(searchType.equals("Surname")) {out.println("selected='selected'");}%>>Surname</option>
+                              <option value="Specialty" <%if(searchType != null) if(searchType.equals("Specialty")) {out.println("selected='selected'");}%>>Specialty</option>
                             </select>
                           </div>
-
                           <div class="form-group" style="width:500px;max-width:80%;">
                             <input type="text" style="width:100%;" class="form-control" name="term" placeholder="<%="Search for: "+term%>">
                           </div>
-
                           <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span> Search</button>
-
                         </form>
                       </div>
                   </div>
               </div>
             </div>
 
-<%-- Search Results --%>
+        <div class="section">
+	    	<div class="container">
+                    <div class="row">
+                            <%
+                              for (Individual individual: indList) {
+                                if (individual.getName() != null) {
+                            %>
+                              <div class="col-sm-4">
+                                <div class="shop-item" style="height:420px;">
+                                        <!-- Individual Image -->
+                                        <div class="image">
+                                                <a><img src="<%=profPicture(individual.getPhotoLink())%>" style="height:220px;" alt="Item Name"></a>
+                                        </div>
+                                        <!-- Individual Title -->
+                                        <div class="title panel panel-heading">
+                                                <h3 style="font-size:16px"><%=nullToEmpty(individual.getName())+" "+nullToEmpty(individual.getSurname())%></h3>
+                                        </div>
 
-            <div class="section">
-	    	      <div class="container">
-                <div class="row">
-                    <%
-                      for (Individual individual: indList) {
-                        if (individual.getName() != null) {
-                    %>
-                    <div class="col-sm-4">
-                      <div class="shop-item" style="height:420px;">
+                                        <!-- Individual Credentials-->
+                                        <div class="price">
+                                                <%=nullToEmpty(individual.getSpecialty())+", "+getAge(individual.getDate())%>
+                                        </div>
+                                        <!-- View Button -->
+                                        <div class="actions">
+                                          <form action="ind-view.jsp" method="POST">
+                                              <input type="hidden" name="indFromSearch" value="<%=individual.getEmail()%>">
+                                              <button type="submit" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-user"></span> Details &amp; Contact</button>
+                                          </form>
+                                        </div>
+                                </div>
+                              </div>
+                              <%
+                                }}
+                              %>
+                            </div>
+                            <!-- End Individual -->
 
-                          <!-- Individual Image -->
-
-                          <div class="image">
-                                  <a><img src="<%=profPicture(individual.getPhotoLink())%>" style="height:220px;" alt="Item Name"></a>
-                          </div>
-
-                          <!-- Individual Name -->
-
-                          <div class="title panel panel-heading">
-                                  <h3 style="font-size:16px"><%=nullToEmpty(individual.getName())+" "+nullToEmpty(individual.getSurname())%></h3>
-                          </div>
-
-                          <!-- Individual Credentials-->
-
-                          <div class="price">
-                                  <%=nullToEmpty(individual.getSpecialty())+", "+getAge(individual.getDate())%>
-                          </div>
-
-                          <!-- View Button -->
-
-                          <div class="actions">
-                            <form action="ind-view.jsp" method="POST">
-                                <input type="hidden" name="indFromSearch" value="<%=individual.getEmail()%>">
-                                <button type="submit" class="btn btn-info btn-lg">
-                                    <span class="glyphicon glyphicon-user"></span> Details &amp; Contact</button>
-                            </form>
-                          </div>
-                      </div>
                     </div>
-                    <%
-                      }}
-                    %>
-                  </div>
                 </div>
-              </div>
 
-<!-- Call to Action Bar -->
-
+                <!-- Call to Action Bar -->
                 <div class="section section-white">
                     <div class="container">
                         <div class="row">
@@ -163,17 +143,17 @@
                                   %>
 
                                   <%
-                                    if (session.getAttribute("user") != null) {
-                                      link = session.getAttribute("userType") + "-view.jsp";
-                                      message1 = "Content is everything!";
-                                      message2 = "View my profile";
+                                  if (session.getAttribute("user") != null) {
+                                    link = session.getAttribute("userType") + "-view.jsp";
+                                    message1 = "Content is everything!";
+                                    message2 = "View my profile";
 
-                                    } else {
-                                      link = "page-login.jsp";
-                                      message1 = "Create your profile now!";
-                                      message2 = "Login";
-                                    }
-                                  %>
+                                  } else {
+                                    link = "page-login.jsp";
+                                    message1 = "Create your profile now!";
+                                    message2 = "Login";
+                                  }
+                                    %>
                                     <h3><%=message1%></h3> <a href="<%=link%>" class="btn btn-small"><%=message2%></a>
                                 </div>
                             </div>
@@ -181,9 +161,7 @@
                     </div>
                 </div>
 
-<%-- footer --%>
-
-<%@ include file="footer.jsp"%>
+    <%@ include file="footer.jsp"%>
 
 <%-- Functions --%>
 
@@ -206,13 +184,6 @@
 %>
 
 <%!
-  /** Instead of printing "null" when the field is empty, we make it an default
-  * picture link.
-  *
-  * @param in the String to be examined.
-  *
-  * @return the string of not null or empty string if null.
-  */
   String profPicture(String in) {
     String pic = "img/avatar.jpg";
     if (in != null && !in.equals("")){

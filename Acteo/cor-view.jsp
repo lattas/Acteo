@@ -9,19 +9,14 @@
 	@author Fotis Katsgiannis
 
 --%>
-
 <%-- JSP Directives --%>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page errorPage="error.jsp" %>
 <%@ page import="gr.acteo.*" %>
-
 <%-- Overriding Custom Css --%>
-
 <link href="css/custom.css" rel="stylesheet" type="text/css">
 <%@page errorPage="error.jsp"%>
-
-<%-- Attributes --%>
 
 <%
     Corporation corporation;
@@ -29,8 +24,6 @@
     CorporationDAO dao = new CorporationDAO();
 
 %>
-
-<%-- Parameters --%>
 
 <%
     if (request.getParameter("corFromSearch") == null) {
@@ -45,7 +38,6 @@
 %>
 
 <%-- HTML --%>
-
 <!DOCTYPE html>
   <html>
     <%@ include file="header.jsp" %>
@@ -55,76 +47,75 @@
     <div class="section">
     <div class="container">
       <div class="row">
+        <!-- Product Image & Available Colors -->
         <div class="col-xs-5">
-
-<%-- Photo --%>
-
           <div class="img-thumbnail">
             <div class="img-responsive">
-              <img style="width:400px; max-height: 400px;" src="<%=profPicture(corporation.getLogoLink())%>" alt="Item Name">
-            </div>
+            <img style="width:400px; max-height: 400px;" src="<%=profPicture(corporation.getLogoLink())%>" alt="Item Name">
+          </div>
           </div>
 
-<%-- Name --%>
-
         </div>
+        <!-- End Product Image & Available Colors -->
+        <!-- Product Summary & Options -->
         <div class="col-xs-4 product-details">
           <br>
           <div class="price">
             <%=nullToEmpty(corporation.getName())%>
           </div><br><br>
-          <h4>Industry: Maritime</h4>
-          <table>
+        <h4>Industry: Maritime</h4>
+        <table>
 
-  <%-- Website --%>
-
-            <tr>
-              <td>
-                <a target="_blank" href="<%=nullToEmptyLink(corporation.getWebsite())%>"
-                    class="btn btn"><i class="icon-shopping-cart icon-white"></i> Visit Website</a>
-              </td>
-              <td style="width: 10px">
-              </td>
-
-  <%-- Email --%>
-
-              <td>
-                <a href="<%="mailto:" + corporation.getEmail() + "?Subject=Hello " + corporation.getName()%>" class="btn btn"><i class="icon-shopping-cart icon-white"></i> Show interest</a>
-              </td>
-            </tr>
-          </table>
+          <!-- Add to Cart Button -->
+          <tr>
+            <td>
+              <a target="_blank" href="<%=nullToEmptyLink(corporation.getWebsite())%>" class="btn btn"><i class="icon-shopping-cart icon-white"></i> Visit Website</a>
+            </td>
+            <td style="width: 10px">
+            </td>
+            <td>
+              <a href="<%="mailto:" + corporation.getEmail() + "?Subject=Hello " + corporation.getName()%>" class="btn btn"><i class="icon-shopping-cart icon-white"></i> Show interest</a>
+            </td>
+          </tr>
+        </table>
         </div>
         <!-- End Product Summary & Options -->
 
         <!-- Full Description & Specification -->
-        </div>
-        <div class="row">
-          <div class="col-xs-12">
-            <div class="tabbable">
-
-            <ul class="nav nav-tabs product-details-nav">
-              <li class="active"><a href="#tab1" data-toggle="tab">Details</a></li>
-            </ul>
-
-            <div class="tab-content product-detail-info">
-              <div class="tab-pane active" id="tab1">
-                <h4>Company Description</h4>
-                <p>
-                  <%=nullToEmpty(corporation.getDescription())%>
-                </p>
-              </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="tabbable">
+            <!-- Tabs -->
+          <ul class="nav nav-tabs product-details-nav">
+            <li class="active"><a href="#tab1" data-toggle="tab">Detals</a></li>
+          </ul>
+          <!-- Tab Content (Full Description) -->
+          <div class="tab-content product-detail-info">
+            <div class="tab-pane active" id="tab1">
+              <h4>Company Description</h4>
+              <p>
+                <%=nullToEmpty(corporation.getDescription())%>
+              </p>
             </div>
           </div>
         </div>
+        </div>
+        <!-- End Full Description & Specification -->
       </div>
-    </div>
   </div>
+</div>
 
-<%-- Footer --%>
+
+
+              </div>
+            </div>
+
+        </div> <%-- row --%>
+      </div> <%-- container --%>
+    </div> <%-- section --%>
 
 <%@ include file="footer.jsp"%>
-
-<%-- Function --%>
 
 <%!
   /** Instead of printing "null" when the field is empty, we make it an empty
