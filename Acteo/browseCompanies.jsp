@@ -44,21 +44,16 @@ browseCompanies.jsp
 %>
 
 <%-- Overriding Custom Css --%>
-
 <link href="css/custom.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="css/leaflet.css" />
-
 <%-- HTML --%>
-
 <!DOCTYPE html>
   <html>
     <%@ include file="header.jsp" %>
     <body class="bg-general">
 
         <%@ include file="menu.jsp" %>
-
-<!-- Page Title -->
-
+        <!-- Page Title -->
         <div class="section section-breadcrumbs">
                 <div class="container">
                         <div class="row">
@@ -69,10 +64,6 @@ browseCompanies.jsp
                 </div>
         </div>
         <br>
-
-
-<%-- Search Bar --%>
-
         <div class="container">
                 <div class="row">
                     <div class="col-xs-8 col-xs-offset-2">
@@ -93,6 +84,7 @@ browseCompanies.jsp
                 </div>
             </div>
           </div>
+<<<<<<< HEAD
 
 <%-- Search Results --%>
 
@@ -152,6 +144,51 @@ browseCompanies.jsp
 
 <!-- Call to Action Bar -->
 
+=======
+            <div class="section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="products-slider">
+                                <!-- Company Slider Item -->
+
+                                <%
+                                  for (Corporation corporation: corList) {
+                                    if (corporation.getName() != null) {
+                                %>
+
+                                <div class="shop-item" style="height:400px;">
+                                    <!-- Company Image -->
+                                    <div class="image" style="height:250px;">
+                                        <a><img src="<%=profPicture(corporation.getLogoLink())%>" style="max-height:250px;margin:auto;" alt="Item Name"></a>
+                                    </div>
+                                    <!-- Company Title -->
+                                    <div class="title">
+                                        <h3><%=nullToEmpty(corporation.getName())%></h3>
+                                    </div>
+                                    <!-- Company Price -->
+                                    <div class="price">
+                                         <a href="<%=nullToEmpty(corporation.getWebsite())%>">Website</a>
+                                    </div>
+                                    <!-- View Button -->
+
+                                    <div class="actions" >
+                                      <form action="cor-view.jsp" method="POST">
+                                          <input type="hidden" name="corFromSearch" value="<%=corporation.getEmail()%>">
+                                          <button type="submit" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-briefcase"></span> Details</button>
+                                      </form>
+                                    </div>
+                               </div>
+                               <%
+                                  }}
+                                %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          <!-- Call to Action Bar -->
+>>>>>>> origin/master
           <div class="section section-white">
               <div class="container">
                   <div class="row">
@@ -165,30 +202,24 @@ browseCompanies.jsp
                             %>
 
                             <%
-                              if (session.getAttribute("user") != null) {
-                                link = session.getAttribute("userType") + "-view.jsp";
-                                message1 = "Content is everything!";
-                                message2 = "View my profile";
+                            if (session.getAttribute("user") != null) {
+                              link = session.getAttribute("userType") + "-view.jsp";
+                              message1 = "Content is everything!";
+                              message2 = "View my profile";
 
-                              } else {
-                                link = "page-login.jsp";
-                                message1 = "Create your profile now!";
-                                message2 = "Login";
-                              }
-                            %>
-                              <h3><%=message1%></h3> <a href="<%=link%>"
-                                  class="btn btn-small"><%=message2%></a>
+                            } else {
+                              link = "page-login.jsp";
+                              message1 = "Create your profile now!";
+                              message2 = "Login";
+                            }
+                              %>
+                              <h3><%=message1%></h3> <a href="<%=link%>" class="btn btn-small"><%=message2%></a>
                           </div>
                       </div>
                   </div>
               </div>
           </div>
-
-<%-- Footer --%>
-
     <%@ include file="footer.jsp"%>
-
-<%-- Functions --%>
 
     <%!
       /** Instead of printing "null" when the field is empty, we make it an empty
@@ -209,6 +240,7 @@ browseCompanies.jsp
     %>
 
     <%!
+<<<<<<< HEAD
       /** Instead of printing "null" when the field is empty, we make it an empty
       * string.
       *
@@ -234,6 +266,8 @@ browseCompanies.jsp
       *
       * @return the string of not null or empty string if null.
       */
+=======
+>>>>>>> origin/master
       String profPicture(String in) {
         String pic = "img/avatar.jpg";
         if (in != null && !in.equals("")){

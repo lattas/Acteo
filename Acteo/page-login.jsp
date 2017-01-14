@@ -45,7 +45,7 @@
   				    <div class="col-sm-5" style="float: none; margin: 0 auto;">
   					    <div class="basic-login">
 
-                  <%-- Login Form --%>
+                  <!-- Login Form -->
   						    <form role="form" action='loginController.jsp' method="POST">
       							<div class="form-group">
       	        			<label for="email"><i class="icon-user"></i> <b>Email</b></label>
@@ -62,8 +62,6 @@
   						    </form>
   					    </div>
 
-                <%-- Register Link --%>
-
                 <div class="basic-login">
                   <div class="not-member">
                     <p>Not a member? <a href="register.jsp">Register here</a></p>
@@ -71,9 +69,17 @@
                 </div>
               </div>
             </div>
+
+
+  				<%--<div class="col-sm-7 social-login">
+  					<p>Or login with your Facebook or Twitter</p>
+  					<div class="social-login-buttons">
+  						<a href="#" class="btn-facebook-login">Login with Facebook</a>
+  						<a href="#" class="btn-twitter-login">Login with Twitter</a>
+  					</div>
+  					<div class="clearfix"></div>
+  				</div> --%>
           </div>
   	     </div>
        </div>
-       
-<%-- Footer --%>
-<%@ include file="footer.jsp"%>
+       <%@ include file="footer.jsp"%>

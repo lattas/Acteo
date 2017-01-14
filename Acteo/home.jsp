@@ -28,38 +28,51 @@
         <!-- Homepage Slider -->
         <div class="homepage-slider">
         	<div id="sequence">
-    				<ul class="sequence-canvas">
+				<ul class="sequence-canvas">
+					<!-- Slide 1 -->
+					<li class="bg4">
+						<!-- Slide Title -->
+						<h2 class="title">To the market's needs</h2>
+						<!-- Slide Text -->
+						<h3 class="subtitle">Our team hopes to bridge the gap that exists in maritime recruiting</h3>
+						<!-- Slide Image -->
+						<img class="slide-img" src="img/homepage-slider/slide1.png" alt="Slide 1" style="padding-right:30px;"/>
+					</li>
+					<!-- End Slide 1 -->
+					<!-- Slide 2 -->
+					<li class="bg3">
+						<!-- Slide Title -->
+						<h2 class="title">Fast and dynamic</h2>
+						<!-- Slide Text -->
+						<h3 class="subtitle">Fast recrutment leads to better crew and route scheduling</h3>
+						<!-- Slide Image -->
+						<img class="slide-img" src="img/homepage-slider/slide2.png" alt="Slide 2" />
+					</li>
+					<!-- End Slide 2 -->
+					<!-- Slide 3 -->
+					<li class="bg1">
+						<!-- Slide Title -->
+						<h2 class="title">Diverse Specialties</h2>
+						<!-- Slide Text -->
+						<h3 class="subtitle">Fill in your ship with the most competent crew even from the most demanding roles</h3>
+						<!-- Slide Image -->
+						<img class="slide-img" src="img/homepage-slider/slide3.png" alt="Slide 3" />
+					</li>
+					<!-- End Slide 3 -->
+				</ul>
+				<div class="sequence-pagination-wrapper">
+					<ul class="sequence-pagination">
+						<li>1</li>
+						<li>2</li>
+						<li>3</li>
+					</ul>
+				</div>
+			</div>
+        </div>
+        <!-- End Homepage Slider -->
 
-    					<li class="bg4">
-    						<h2 class="title">To the market's needs</h2>
-    						<h3 class="subtitle">Our team hopes to bridge the gap that exists in maritime recruiting</h3>
-    						<img class="slide-img" src="img/homepage-slider/slide1.png" alt="Slide 1" style="padding-right:30px;"/>
-    					</li>
 
-    					<li class="bg3">
-
-    						<h2 class="title">Fast and dynamic</h2>
-    						<h3 class="subtitle">Fast recrutment leads to better crew and route scheduling</h3>
-    						<img class="slide-img" src="img/homepage-slider/slide2.png" alt="Slide 2" />
-    					</li>
-
-    					<li class="bg1">
-    						<h2 class="title">Diverse Specialties</h2>
-    						<h3 class="subtitle">Fill in your ship with the most competent crew even from the most demanding roles</h3>
-    						<img class="slide-img" src="img/homepage-slider/slide3.png" alt="Slide 3" />
-    					</li>
-    				</ul>
-  				<div class="sequence-pagination-wrapper">
-  					<ul class="sequence-pagination">
-  						<li>1</li>
-  						<li>2</li>
-  						<li>3</li>
-  					</ul>
-  				</div>
-			  </div>
-      </div>
-
-<!-- Page Title -->
+		<!-- Page Title -->
 		<div class="section section-breadcrumbs">
 			<div class="container">
 				<div class="row">
@@ -70,10 +83,8 @@
 			</div>
 		</div>
 
-<%-- Call to Action --%>
-
-    <div class="section">
-	  	<div class="container">
+        <div class="section">
+	    	<div class="container">
 				<div class="row">
 					<div class="col-sm-6">
 						<div class="portfolio-item">
@@ -91,7 +102,6 @@
 							</div>
 						</div>
 					</div>
-
 					<div class="col-sm-6">
 						<div class="portfolio-item">
 							<div class="portfolio-image">
@@ -112,6 +122,5 @@
 			</div>
 		</div>
 
-<%-- Footer --%>
-
+		<!-- End Call to Action Bar -->
 <%@ include file="footer.jsp"%>

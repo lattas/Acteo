@@ -24,6 +24,7 @@ package gr.acteo;
     String photoLink;
     String email;
 
+
    /**
    * Retrieves user object based on given email. If no user is
    * found, it throws a relevant exception.
@@ -68,7 +69,7 @@ package gr.acteo;
 
        /* User Not Found */
        } else {
-         throw new Exception("Wrong Username or Password. Please <a href='' onclick='history.go(-1)'>Try Again</a>");
+         throw new Exception("Wrong Username or Password");
        }
 
          /* Close */
