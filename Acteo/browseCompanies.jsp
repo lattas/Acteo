@@ -106,7 +106,7 @@ browseCompanies.jsp
 
                               <%
                                 for (Corporation corporation: corList) {
-                                  if (corporation.getName() != null) {
+                                  if (corporation.getName() != null && !corporation.getName().isEmpty()) {
                               %>
 
                               <div class="shop-item" style="height:400px;">
@@ -201,6 +201,24 @@ browseCompanies.jsp
       String nullToEmpty(String in) {
 
         String result = "";
+        if (in != null) {
+          result = in;
+        }
+        return result;
+      }
+    %>
+
+    <%!
+      /** Instead of printing "null" when the field is empty, we make it an empty
+      * string.
+      *
+      * @param in the String to be examined.
+      *
+      * @return the string of not null or empty string if null.
+      */
+      String nullSpecialty(String in) {
+
+        String result = "No Specialty";
         if (in != null) {
           result = in;
         }

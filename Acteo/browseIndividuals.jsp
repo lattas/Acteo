@@ -107,7 +107,7 @@
                 <div class="row">
                     <%
                       for (Individual individual: indList) {
-                        if (individual.getName() != null) {
+                        if (individual.getName() != null && !individual.getName().isEmpty()) {
                     %>
                     <div class="col-sm-4">
                       <div class="shop-item" style="height:420px;">
@@ -127,7 +127,7 @@
                           <!-- Individual Credentials-->
 
                           <div class="price">
-                                  <%=nullToEmpty(individual.getSpecialty())+", "+getAge(individual.getDate())%>
+                                  <%=nullSpecialty(individual.getSpecialty())+", "+getAge(individual.getDate())%>
                           </div>
 
                           <!-- View Button -->
@@ -251,5 +251,23 @@
     }
 
     return age;
+  }
+%>
+
+<%!
+  /** Instead of printing "null" when the field is empty, we make it an empty
+  * string.
+  *
+  * @param in the String to be examined.
+  *
+  * @return the string of not null or empty string if null.
+  */
+  String nullSpecialty(String in) {
+
+    String result = "No Specialty";
+    if (in != null) {
+      result = in;
+    }
+    return result;
   }
 %>
