@@ -17,7 +17,7 @@ package gr.acteo;
 
    private final String dbname = "ismgroup39";
    private final String dbusername = "ismgroup39";
-   private final String dbpassword = "***REMOVED***";
+   private final String dbpassword = "";
 
    private Connection con = null;
 
